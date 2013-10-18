@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: qtmain
+# --
+#include <QApplication>
+#include <QLabel>
+
+int main(int argc, char *argv[])
+{
+    QApplication ${1:app}(argc, argv);
+    $0
+    return $1.exec();
+}

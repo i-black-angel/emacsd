@@ -1,0 +1,321 @@
+;; -------- Start: Global key bindings -----------------------------------
+;; 
+;; Define functions
+;; 
+(defun match-paren (arg)
+  "Go to the matching paren if on a paren; otherwise insert %."
+  (interactive "p")
+  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
+	((looking-at "\\s\)") (forward-char 1) (backward-list 1))
+	(t (self-insert-command (or arg 1)))))
+
+(defun zl-newline nil
+  "open new line belowe current line"
+  (interactive)
+  (end-of-line)
+  (newline))
+
+(defun ol-newline nil
+  "open new line upon current line"
+  (interactive)
+  (move-beginning-of-line 1)
+  (open-line 1)
+)
+
+(defun  kid-gccrec()
+   (interactive)
+   (tooltip-show
+    (shell-command-to-string
+     (concat "gccrec g++-code-assist -c "
+	     "-pipe -O2 -Wall -W -D_REENTRANT "
+	     "-DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"
+     	    "-I/usr/share/qt4/mkspecs/linux-g++ "
+     	    "-I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui "
+     	    "-I/usr/include/qt4 -I. -I. " (buffer-file-name)))))
+
+(defun sdcv-to-buffer ()
+  (interactive)
+  (let ((word (if mark-active
+		  (buffer-substring-no-properties (region-beginning) (region-end))
+		(current-word nil t))))
+    (setq word (read-string (format "Search the dictionary for (default %s): " word)
+			    nil nil word))
+    (set-buffer (get-buffer-create "*sdcv*"))
+    (buffer-disable-undo)
+    (erase-buffer)
+    (let ((process (start-process-shell-command "sdcv" "*sdcv*" "sdcv" "-n" word)))
+      (set-process-sentinel
+       process
+       (lambda (process signal)
+	 (when (memq (process-status process) '(exit signal))
+	   (unless (string= (buffer-name) "*sdcv*")
+	     (setq kid-sdcv-window-configuration (current-window-configuration))
+	     (switch-to-buffer-other-window "*sdcv*")
+	     (local-set-key (kbd "d") 'kid-sdcv-to-buffer)
+	     (local-set-key (kbd "q") (lambda ()
+					(interactive)
+					(bury-buffer)
+					(unless (null (cdr (window-list))) ; only one window
+					  (delete-window)))))
+	   (goto-char (point-min))))))))
+
+(defun open-config-file()
+  (interactive)
+  (find-file "~/.emacs"))
+
+(defun reload-dotemacs-file()
+  (interactive)
+  (load-file "~/.emacs"))
+
+(defun kill-to-front()
+  (interactive)
+  (kill-region (point) 
+	       (progn (move-beginning-of-line 1) (point))))
+
+;; 
+;; Key Bindings
+;; 
+(global-set-key (kbd "C-SPC") 'nil)
+(global-set-key (kbd "C-,") 'set-mark-command)
+(global-set-key (kbd "C-c m") 'set-mark-command)
+(global-set-key (kbd "C-c d") 'sdcv-to-buffer)
+(global-set-key "\C-x\C-b" 'electric-buffer-list)
+(global-set-key [C-return] 'zl-newline)	;绑定Ctrl-回车
+(global-set-key "\C-o" 'ol-newline)
+(global-set-key "\C-w" 'backward-kill-word)
+;; (global-set-key "%" 'match-paren)
+(global-set-key [f11] 'reload-dotemacs-file)
+(global-set-key [f12] 'open-config-file)
+;; (global-set-key "\C-h" 'backward-delete-char-untabify)
+;; (global-set-key "\C-h" 'delete-backward-char)
+(global-set-key "\C-u" 'kill-to-front)
+
+(define-key global-map [(f3)] 'clipboard-kill-ring-save) ;Bind to `copy
+(define-key global-map [(f4)] 'clipboard-yank)		 ;Bind to `paste
+
+;; refer to this site:
+;; http://ocean.stanford.edu/research/quick_emacs.html
+(keyboard-translate ?\C-h ?\C-?)	; translate `C-h` to DEL
+(keyboard-translate ?\C-? ?\C-h)	; translate DEL to `C-h`.
+(global-set-key [?\C-h] 'delete-backward-char)
+;; (global-set-key [?\C-x ?h] 'help-command)
+;; ======== End: Global key bindings =====================================
+
+
+;; -------- Start: Performence Settings ----------------------------------
+(fset 'yes-or-no-p 'y-or-n-p)		; 以y/n代替yes/no
+(display-time-mode t)			; Show Time
+(setq display-time-day-and-date t)	; Display Day & Date
+(setq display-time t)			; Display Time
+(setq mouse-yank-at-point t)
+(global-linum-mode t)
+(tool-bar-mode -1)
+(setq-default make-backup-files nil)  ; No backup file (*.*~)
+;; display line-num && column-num
+(setq column-number-mode t)
+(setq line-number-mode t)
+
+;; Change the title, display buffer's name
+(setq frame-title-format "%f")
+
+;; '(compile-command "make")
+
+;; Misc
+(show-paren-mode t)
+(setq show-paren-style 'parenthesis)
+
+;; scroll one line at a time (less "jumpy" than defaults)
+(scroll-bar-mode -1)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed -1) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1
+      scroll-conservatively 10000) ;; keyboard scroll one line at a time
+
+;; org-mode truncate-lines
+(add-hook 'org-mode-hook 
+(lambda () (setq truncate-lines nil)))
+
+;; set user info
+(setq user-full-name "Shusheng Shao")
+(setq user-mail-address "bluebird.shao@gmail.com")
+;; ======== End: Performence Settings ====================================
+
+
+
+;; ---------- begin: mode -----------------------------------
+;;;;根据后缀判断所用的mode
+;;;;注意：我在这里把.h .rc关联到了c++-mode
+(setq auto-mode-alist
+	  (append '(("\\.h$" . c++-mode)) auto-mode-alist))
+(setq auto-mode-alist
+	  (append '(("\\.rc$" . c++-mode)) auto-mode-alist))
+;; 将.mak关联到 makefile-mode
+(setq auto-mode-alist
+      (cons '("\\.mak$" . makefile-mode) auto-mode-alist))
+;; 将.bat关联到 shell-script-mode
+(setq auto-mode-alist
+      (cons '("\\.bat$" . shell-script-mode) auto-mode-alist))
+;; (setq auto-mode-alist
+;;       (cons '(".fvwm2rc" . fvwm-mode) auto-mode-alist))
+;; (setq auto-mode-alist
+;;       (cons '("\\.fvwm$" . fvwm-mode) auto-mode-alist))
+;; =========== end: mode ======================================
+
+
+;; -------- Begin: 我的C/C++语言编辑策略 ---------------------------------
+;; (setq tab-stop-list ())
+;; (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80)) 
+;; (defconst my-c-style
+;;   '((c-tab-always-indent        . t)
+;;     (c-comment-only-line-offset . 4)
+;;     (c-hanging-braces-alist     . ((substatement-open after)
+;;                                    (brace-list-open)))
+;;     (c-hanging-colons-alist     . ((member-init-intro before)
+;;                                    (inher-intro)
+;;                                    (case-label after)
+;;                                    (label after)
+;;                                    (access-label after)))
+;;     (c-cleanup-list             . (scope-operator
+;;                                    empty-defun-braces
+;;                                    defun-close-semi))
+;;     (c-offsets-alist            . ((arglist-close . c-lineup-arglist)
+;;                                    (substatement-open . 0)
+;;                                    (case-label        . 4)
+;;                                    (block-open        . 0)
+;;                                    (knr-argdecl-intro . -)))
+;;     (c-echo-syntactic-information-p . t)
+;;     )
+;;   "My C Programming Style")
+
+;; offset customizations not in my-c-style
+;; (setq c-offsets-alist '((member-init-intro . ++)))
+
+;; (defun my-help-mode-hook()
+;;   (define-key help-mode-map "\C-h" 'backward-delete-char-untabify))
+;; (add-hook 'help-mode-hook 'my-help-mode-hook)
+
+(defun my-c-mode-common-hook()
+  (setq tab-width 4 indent-tabs-mode -1)
+  ;; (c-add-style "PERSONAL" my-c-style t)
+  (define-key c-mode-base-map [(return)] 'newline-and-indent)
+  (define-key c-mode-base-map [(f7)] 'compile)
+  (define-key c-mode-base-map [(f8)] 'ff-get-other-file)
+  (define-key c-mode-base-map [(f9)] 'ff-find-other-file)
+  (define-key c-mode-base-map [(meta \`)] 'c-indent-command)
+  ;;预处理设置
+  ;; (setq c-macro-shrink-window-flag t)
+  ;; (setq c-progress-interval nil)
+)
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+;; ======== End: C program strategy ======================================
+
+
+
+;; -------- Begin: 我的C++语言编辑策略 -----------------------------------
+(defun my-c++-mode-hook()
+  (setq tab-width 4 indent-tabs-mode -1)
+  (c-set-style "stroustrup")
+;;  (define-key c++-mode-map [f3] 'replace-regexp)
+)
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+;; ======== End: C++ Program Strategy ====================================
+
+
+
+;; -------- Begin: Load Files --------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/plugins")
+
+;; Yet Another Snippet (yasnippet)
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet-0.6.1c")
+(require 'yasnippet)
+(setq yas/root-directory "~/.emacs.d/plugins/yasnippet-0.6.1c/snippets")
+(yas/load-directory yas/root-directory)
+(yas/initialize)
+
+(require 'color-theme)
+(color-theme-initialize)
+(require 'doxymacs)
+(add-hook 'c-mode-common-hook 'doxymacs-mode)
+(defun my-doxymacs-font-lock-hook ()
+  (if (or (eq major-mode 'c-mode) (eq major-mode 'c++-mode))
+      (doxymacs-font-lock)))
+(add-hook 'font-lock-mode-hook 'my-doxymacs-font-lock-hook)
+
+(add-hook 'c-mode-common-hook
+	  '(lambda()
+	     (require 'xcscope)))
+(defun my-find-tag(&optional prefix)
+  "union of `find-tag' alternatives. decides upon major-mode"
+  (interactive "P")
+  (if (and (boundp 'cscope-minor-mode)
+	   cscope-minor-mode)
+      (progn
+	(ring-insert find-tag-marker-ring (point-marker))
+	(call-interactively
+	 (if prefix
+	     'cscope-find-this-symbol
+	   'cscope-find-global-definition-no-prompting)))
+    (call-interactively 'find-tag)))
+(substitute-key-definition 'find-tag 'my-find-tag global-map)
+
+;; -------------------------------
+;; Load fvwm-mode on Emacs startup
+;; -------------------------------
+;; (require 'fvwm-mode)
+;; (add-hook 'fvwm-mode-hook
+;; 	  '(lambda()
+;; 	     (font-lock-mode t)
+;; 	     (setq font-lock-keywords fvwm-font-lock-keywords)
+;; 	     (font-lock-fontify-buffer)))
+
+;; Auto-Complete-Mode
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/ac-dict")
+(ac-config-default)
+(define-key ac-completing-map (kbd "C-n") 'ac-next)
+(define-key ac-completing-map (kbd "C-p") 'ac-previous)
+
+;; w3m-load
+(add-to-list 'load-path "~/.emacs.d/plugins/w3m")
+(require 'w3m-load)
+
+;; Start emacs server
+;; (server-start)
+;; ======= End: Load Files ===============================================
+
+ 
+;; 
+;; Emacs23 for windows 字体设置
+;; =======================================================================
+;; If you are using Windows 7, just uncomment bellow text.
+;; (setq w32-charset-info-alist
+;; (cons '("gbk" w32-charset-gb2312 . 936) w32-charset-info-alist))
+;; (setq default-frame-alist
+;; (append
+;; '((font . "fontset-gbk")) default-frame-alist))
+;; (create-fontset-from-fontset-spec
+;; "-outline-Courier New-normal-r-normal-normal-13-97-96-96-c-*-fontset-gbk")
+;; (set-fontset-font
+;; "fontset-default" nil
+;; "-outline-新宋体-normal-r-normal-*-14-*-96-96-c-*-iso10646-1" nil 'prepend)
+;; (set-fontset-font
+;; "fontset-gbk" 'kana
+;; "-outline-新宋体 -normal-r-normal-*-14-*-96-96-c-*-iso10646-1" nil 'prepend)
+;; (set-fontset-font
+;; "fontset-gbk" 'han
+;; "-outline-新宋体-normal-r-normal-*-14-*-96-96-c-*-iso10646-1" nil 'prepend)
+;; (set-fontset-font
+;; "fontset-gbk" 'cjk-misc
+;; "-outline-新 宋体-normal-r-normal-*-14-*-96-96-c-*-iso10646-1" nil 'prepend)
+;; (set-fontset-font
+;; "fontset-gbk" 'symbol
+;; "-outline-新宋体-normal-r-normal-*-14-*-96-96-c-*-iso10646-1" nil 'prepend)
+;; (set-default-font "fontset-gbk")
+;; =======================================================================
+
+(set-frame-font "monospace-10")
+(set-fontset-font "fontset-default" 'han '("WenQuanYi Micro Hei". "unicode-bmp"))
+
+(require 'tramp)
+(setq tramp-default-method "scp")

@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: res
+# --
+resbuf *${1:res} = ads_buildlist(
+        RTDXF0, ${2:type}, AcDb::kDxfLayerName, ${3:layer},
+        RTNONE);
+    ads_name ${4:ssname};
+    ads_ssget(_T("X"), NULL, NULL, $1, $4);
+    ads_relrb($1);
+    $1 = NULL;
+    long ${5:length} = 0, ${6:ln} = 0;
+    ads_sslength(ssname, &$5);
+    acedSetStatusBarProgressMeter(${7:msg}, 0, $5);
+    for ($6 = 0; $6 < $5; ++$6)
+    {
+        acedSetStatusBarProgressMeterPos($6);        
+        ads_name ${8:ent};
+        ads_ssname($4, $6, $8);
+	$0
+    }
+    acedRestoreStatusBar();
+    ads_ssfree($4);

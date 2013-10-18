@@ -1,0 +1,4 @@
+#name : using namespace ... 
+# --
+using namespace ${$$(yas/choose-value '("std" "tool"))};
+$0

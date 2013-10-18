@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: curtime
+# --
+char ${1:szTime}[${2:_MAX_PATH}] = "";
+time_t ${3:curTime};
+time(&$3);
+tm *${4:t} = localtime(&$3);
+
+strftime($1, $2, "%Y-%m-%d", t);

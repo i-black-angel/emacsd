@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: invoke
+# --
+resbuf *${1:cmd} = NULL, *${2:list} = NULL;
+$1 = ads_buildlist(RTSTR, ${3:command}, RTNONE);
+int ${4:stat} = ads_invoke($1, &$2);
+ads_relrb($1); $1 = NULL;
+ads_relrb($2); $2 = NULL;
