@@ -17,4 +17,13 @@ YOUR PRECIOUS CONFIGURE FILES. :D
    
    $ ln -s .emacs.d/dotemacs ~/.emacs
 
-   That's OK, it's very easy, right? 
+   And now, you can start emacs with all these configurations.
+   It's very easy, right? 
+
+4. OPTIMIZE (optional)
+   Start emacs, type
+
+   'C-0 M-x byte-recompile-directory'
+
+   and type '~/.emacs.d', this command will compile all the .el files in
+   the directory and in all subdirectories below.
