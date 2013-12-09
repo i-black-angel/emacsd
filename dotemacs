@@ -221,7 +221,12 @@
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 ;; ======== End: C++ Program Strategy ====================================
 
-
+;; -------- Begin: makefile-mode --------------------------------------
+(defun my-makefile-mode-hook()
+  (define-key makefile-mode-map [(f7)] 'compile)
+)
+(add-hook 'makefile-mode-hook 'my-makefile-mode-hook)
+;; ======= End: Makefile Strategy ====================================
 
 ;; -------- Begin: Load Files --------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/plugins")
