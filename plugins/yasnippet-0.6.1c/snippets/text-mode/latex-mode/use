@@ -3,4 +3,4 @@
 # update: Feb 6 2015
 # name: \usepackage{packagename}
 # --
-\usepackage{${1:fontspec}}$0
+\usepackage{${$$(yas/choose-value '("color" "graphicx" "fontspec" "xeCJK"))}}$0
