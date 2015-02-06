@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 6 2015
+# name: \chapter
+# group: sectioning
+# --
+\chapter{${1:chaptername}}$0

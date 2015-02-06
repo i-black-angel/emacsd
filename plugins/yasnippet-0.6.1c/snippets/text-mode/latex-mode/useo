@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 6 2015
+# name: \usepackage[options]{packagename}
+# --
+\usepackage[${1:options}]{${2:fontspec}}$0
