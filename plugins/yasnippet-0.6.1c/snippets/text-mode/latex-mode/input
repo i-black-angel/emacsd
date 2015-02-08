@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # contributor: Shusheng Shao <iblackangel@163.com>
-# updae: Feb 8 2015
-# name: \date{}
+# update: Feb 8 2015
+# name: \input{}
 # --
-\date{${1:date}}$0
+\input{${1:xxx.def}}$0

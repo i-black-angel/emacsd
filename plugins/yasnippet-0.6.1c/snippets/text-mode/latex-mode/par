@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # contributor: Shusheng Shao <iblackangel@163.com>
 # update: Feb 6 2015
-# name: \paragraph
+# name: \paragraph{}
 # group: sectioning
 # --
 \paragraph{${1:paragraphname}}$0

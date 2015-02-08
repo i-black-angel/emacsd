@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # contributor: Shusheng Shao <iblackangel@163.com>
 # update: Feb 6 2015
-# name: \title{titlename}
+# name: \title{}
 # --
 \title{${1:titlename}}$0

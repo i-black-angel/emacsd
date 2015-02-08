@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # contributor: Shusheng Shao <iblackangel@163.com>
 # update: Feb 6 2015
-# name: \usepackage{packagename}
+# name: \usepackage{}
 # --
-\usepackage{${$$(yas/choose-value '("color" "graphicx" "fontspec" "xeCJK"))}}$0
+\usepackage{${1:packagename}}$0

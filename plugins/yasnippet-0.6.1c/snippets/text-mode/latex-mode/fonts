@@ -2,7 +2,8 @@
 # name: fonts
 # --
 \setCJKmainfont{${1:SimSun}}
-\setCJKmonofont{${2:SimHei}}
-\setmainfont{${3:DejaVu Serif}}
-\setmonofont{${4:DejaVu Sans Mono}}
-\setsansfont{${5:DejaVu Sans}}$0
+\setCJKmonofont{${2:WenQuanYi Micro Hei}}
+\setCJKsansfont{${3:WenQuanYi Micro Hei}}
+\setmainfont{${4:DejaVu Serif}}
+\setmonofont{${5:DejaVu Sans Mono}}
+\setsansfont{${6:DejaVu Sans}}$0
