@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# updae: Feb 8 2015
+# name: \date{DATE}
+# --
+\date{${1:DATE}}$0
