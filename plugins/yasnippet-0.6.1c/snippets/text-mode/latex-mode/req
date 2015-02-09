@@ -3,4 +3,4 @@
 # update: Feb 8 2015
 # name: \RequirePackage{}
 # --
-\RequirePackage{${1:package}}$0
+\RequirePackage${1:[options]}{${2:package}}$0

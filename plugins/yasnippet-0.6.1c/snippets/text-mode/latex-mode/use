@@ -3,4 +3,4 @@
 # update: Feb 6 2015
 # name: \usepackage{}
 # --
-\usepackage{${1:packagename}}$0
+\usepackage${1:[options]}{${2:packagename}}$0

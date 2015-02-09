@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 9 2015
+# name: \renewcommand{}
+# --
+\renewcommand{${1:name}}${2:[num]}{${3:definition}}$0
