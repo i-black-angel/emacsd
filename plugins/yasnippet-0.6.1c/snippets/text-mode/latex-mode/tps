@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 9 2015
+# name: \thispagestyle{}
+# group: PageStyle
+# --
+\thispagestyle{${1:empty}}$0
