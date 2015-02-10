@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 10 2015
+# name: \begin{enumerate}...\end{enumerate}
+# group: List Environment
+# --
+\begin{enumerate}
+\item $0
+\end{enumerate}

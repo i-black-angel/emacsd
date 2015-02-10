@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 10 2015
+# name: \begin{tabular}...\end{tabular}
+# --
+\begin{tabular}{$1}
+  \hline
+  $2
+  \hline
+\end{tabular}

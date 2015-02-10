@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 9 2015
+# name: \begin{table}...\end{table}
+# --
+\begin{table}[${1:ht}]
+  \centering
+  $2
+  \caption{${3:caption}}
+  \label{${4:tab:label}}
+\end{table}$0
