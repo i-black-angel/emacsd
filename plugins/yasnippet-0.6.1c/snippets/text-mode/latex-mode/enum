@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # contributor: Shusheng Shao <iblackangel@163.com>
 # update: Feb 10 2015
-# name: \begin{enumerate}...\end{enumerate}
+# name: \begin{enumerate}
 # group: List Environment
 # --
 \begin{enumerate}

@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # contributor: Shusheng Shao <iblackangel@163.com>
 # update: Feb 10 2015
-# name: \begin{description}...\end{description}
+# name: \begin{description}
 # group: List Environment
 # --
 \begin{description}
