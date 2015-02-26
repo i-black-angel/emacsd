@@ -1,7 +1,8 @@
 # -*- mode: snippet -*-
 # contributor: Shusheng Shao <iblackangel@163.com>
 # update: Feb 9 2015
-# name: \begin{table}...\end{table}
+# name: \begin{table}
+# group: Table Environment
 # --
 \begin{table}[${1:ht}]
   \caption{${2:caption}}

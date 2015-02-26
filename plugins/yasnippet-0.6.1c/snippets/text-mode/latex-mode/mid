@@ -1,11 +1,7 @@
 # -*- mode: snippet -*-
 # contributor: Shusheng Shao <iblackangel@163.com>
-# update: Feb 10 2015
-# name: \begin{tabular}
+# updae: Feb 11 2015
+# name: \midrule
 # group: Table Environment
 # --
-\begin{tabular}{$1}
-  \hline
-  $0
-  \hline
-\end{tabular}
+\midrule$0
