@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 27 2015
+# name: \bibliography
+# group: Bibliography
+# --
+\bibliography{${1:ref.bib}}$0

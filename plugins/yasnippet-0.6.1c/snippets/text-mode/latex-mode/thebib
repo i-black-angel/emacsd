@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 27 2015
+# name: \begin{thebibliography}
+# group: Bibliography
+# --
+\begin{thebibliography}{${1:99}}
+$0
+\end{thebibliography}
