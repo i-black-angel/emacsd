@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# updae: Mar 4 2015
+# name: \cline
+# group: Table Environment
+# --
+\cline{${1:n-m}}$0
