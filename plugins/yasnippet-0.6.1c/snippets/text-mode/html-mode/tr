@@ -2,6 +2,4 @@
 #name : <tr>...</tr>
 #group : table
 # --
-<tr>
-  $0
-</tr>
+<tr>$0</tr>
