@@ -198,7 +198,8 @@
 ;; (add-hook 'help-mode-hook 'my-help-mode-hook)
 
 (defun my-emacs-lisp-mode-hook()
-  (define-key emacs-lisp-mode-map [f7] 'eval-buffer))
+  (define-key emacs-lisp-mode-map [f7] 'eval-buffer)
+  (define-key emacs-lisp-mode-map [(return)] 'newline-and-indent))
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
 
 (defun my-c-mode-common-hook()
