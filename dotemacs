@@ -198,6 +198,10 @@
 ;;   (define-key help-mode-map "\C-h" 'backward-delete-char-untabify))
 ;; (add-hook 'help-mode-hook 'my-help-mode-hook)
 
+(defun my-emacs-lisp-mode-hook()
+  (define-key emacs-lisp-mode-map [f7] 'eval-buffer))
+(add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
+
 (defun my-c-mode-common-hook()
   (setq tab-width 4 indent-tabs-mode -1)
   ;; (c-add-style "PERSONAL" my-c-style t)
@@ -257,7 +261,7 @@
 ;; If you wanna use xcscope.el script, install "cscope" first,
 ;; for Ubuntu distrabution:
 ;;
-;;     $ sudo apt-get install cscope
+;;     $ sudo apt-get install cscope cscope-el
 ;;
 ;; Uncomment below lines to enable xcscope.
 (add-hook 'c-mode-common-hook
@@ -296,8 +300,8 @@
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
 ;; w3m-load
-(add-to-list 'load-path "~/.emacs.d/plugins/w3m")
-(require 'w3m-load)
+;; (add-to-list 'load-path "~/.emacs.d/plugins/w3m")
+;; (require 'w3m-load)
 
 ;; Start emacs server
 (server-start)
@@ -333,8 +337,9 @@
 ;; (set-default-font "fontset-gbk")
 ;; =======================================================================
 
-(set-frame-font "monospace-10")
-(set-fontset-font "fontset-default" 'han '("WenQuanYi Micro Hei". "unicode-bmp"))
+(add-to-list 'default-frame-alist
+	     '(font . "monospace-10"))
+(set-fontset-font "fontset-default" 'han '("WenQuanYi Micro Hei" . "unicode-bmp"))
 
 (require 'tramp)
 (setq tramp-default-method "scp")
