@@ -147,10 +147,9 @@
 ;; ---------- begin: mode -----------------------------------
 ;;;;根据后缀判断所用的mode
 ;;;;注意：我在这里把.h .rc关联到了c++-mode
-(setq auto-mode-alist
-	  (append '(("\\.h$" . c++-mode)) auto-mode-alist))
-(setq auto-mode-alist
-	  (append '(("\\.rc$" . c++-mode)) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.rc$" . c++-mode))
+
 ;; 将.mak关联到 makefile-mode
 (setq auto-mode-alist
       (cons '("\\.mak$" . makefile-mode) auto-mode-alist))
