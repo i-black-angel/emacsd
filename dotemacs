@@ -264,9 +264,9 @@
 ;;     $ sudo apt-get install cscope cscope-el
 ;;
 ;; Uncomment below lines to enable xcscope.
-(add-hook 'c-mode-common-hook
-	  '(lambda()
-	     (require 'xcscope)))
+;; (add-hook 'c-mode-common-hook
+;; 	  '(lambda()
+;; 	     (require 'xcscope)))
 
 (defun my-find-tag(&optional prefix)
   "union of `find-tag' alternatives. decides upon major-mode"
