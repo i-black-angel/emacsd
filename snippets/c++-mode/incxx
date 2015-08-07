@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: #include <...>
+# key: incxx
+# --
+#include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <algorithm>
+#include <fstream>
+#include <cstdio>
+#include <cctype>
+#include <ctime>
+#include <cstdlib>
+#include <cstring>
+#include <cmath>
+#include <locale>
+
+using namespace std;
+
