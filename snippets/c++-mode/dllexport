@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dllexport
+# key: dllexport
+# --
+#ifndef ${1:LIBAPI}
+#define $1  __declspec(dllexport)
+#endif

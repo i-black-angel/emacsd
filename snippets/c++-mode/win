@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: windows
+# key: win
+# group: win32
+# --
+#include <windows.h>
