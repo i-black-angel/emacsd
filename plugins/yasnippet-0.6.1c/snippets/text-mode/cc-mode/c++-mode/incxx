@@ -1,4 +1,6 @@
+# -*- mode: snippet -*-
 # name: incxx
+# contributor : shusheng shao <iblackangel@163.com>
 # --
 #include <iostream>
 #include <string>

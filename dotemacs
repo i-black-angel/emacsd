@@ -84,14 +84,7 @@
 (global-set-key "\C-o" 'ol-newline)
 (global-set-key "\C-w" 'backward-kill-word)
 ;; (global-set-key "%" 'match-paren)
-(global-set-key [f11] 'reload-dotemacs-file)
-(global-set-key [f12] 'open-config-file)
-;; (global-set-key "\C-h" 'backward-delete-char-untabify)
-;; (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key "\C-u" 'kill-to-front)
-
-(define-key global-map [(f3)] 'clipboard-kill-ring-save) ;Bind to `copy
-(define-key global-map [(f4)] 'clipboard-yank)		 ;Bind to `paste
 
 ;; refer to this site:
 ;; http://ocean.stanford.edu/research/quick_emacs.html
@@ -111,14 +104,13 @@
 (global-linum-mode t)
 (tool-bar-mode -1)
 (setq-default make-backup-files nil)  ; No backup file (*.*~)
+(setq-default major-mode 'text-mode)
 ;; display line-num && column-num
 (setq column-number-mode t)
 (setq line-number-mode t)
 
 ;; Change the title, display buffer's name
 (setq frame-title-format "%f")
-
-;; '(compile-command "make")
 
 ;; Misc
 (show-paren-mode t)
@@ -136,11 +128,11 @@
 
 ;; org-mode truncate-lines
 (add-hook 'org-mode-hook 
-(lambda () (setq truncate-lines nil)))
+	  (lambda () (setq truncate-lines nil)))
 
 ;; set user info
 (setq user-full-name "Shusheng Shao")
-(setq user-mail-address "bluebird.shao@gmail.com")
+(setq user-mail-address "iblackangel@163.com")
 ;; ======== End: Performence Settings ====================================
 
 
@@ -156,10 +148,6 @@
 ;; 将.bat关联到 shell-script-mode
 (setq auto-mode-alist
       (cons '("\\.bat$" . shell-script-mode) auto-mode-alist))
-;; (setq auto-mode-alist
-;;       (cons '(".fvwm2rc" . fvwm-mode) auto-mode-alist))
-;; (setq auto-mode-alist
-;;       (cons '("\\.fvwm$" . fvwm-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.qml$" . css-mode) auto-mode-alist))
 ;; =========== end: mode ======================================
@@ -193,10 +181,6 @@
 ;; offset customizations not in my-c-style
 ;; (setq c-offsets-alist '((member-init-intro . ++)))
 
-;; (defun my-help-mode-hook()
-;;   (define-key help-mode-map "\C-h" 'backward-delete-char-untabify))
-;; (add-hook 'help-mode-hook 'my-help-mode-hook)
-
 (defun my-emacs-lisp-mode-hook()
   (define-key emacs-lisp-mode-map [f7] 'eval-buffer)
   (define-key emacs-lisp-mode-map [(return)] 'newline-and-indent))
@@ -206,9 +190,16 @@
   (setq tab-width 4 indent-tabs-mode -1)
   ;; (c-add-style "PERSONAL" my-c-style t)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
+  (define-key c-mode-base-map [(f3)] 'ff-get-other-file)
+  (define-key c-mode-base-map [(f4)] 'ff-find-other-file)
+  ;; for debug
+  (define-key c-mode-base-map [(f5)] 'gud-go)
   (define-key c-mode-base-map [(f7)] 'compile)
-  (define-key c-mode-base-map [(f8)] 'ff-get-other-file)
-  (define-key c-mode-base-map [(f9)] 'ff-find-other-file)
+  (define-key c-mode-base-map [(f8)] 'gud-finish)
+  (define-key c-mode-base-map [(f9)] 'gud-break)
+  (define-key c-mode-base-map [(f10)] 'gud-step)
+  (define-key c-mode-base-map [(f11)] 'gud-next)
+  (define-key c-mode-base-map [(f12)] 'gdb-restore-windows)
   (define-key c-mode-base-map [(meta \`)] 'c-indent-command)
   ;;预处理设置
   ;; (setq c-macro-shrink-window-flag t)
@@ -216,8 +207,6 @@
 )
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 ;; ======== End: C program strategy ======================================
-
-
 
 ;; -------- Begin: 我的C++语言编辑策略 -----------------------------------
 (defun my-c++-mode-hook()
@@ -227,6 +216,10 @@
 )
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 ;; ======== End: C++ Program Strategy ====================================
+
+;; GDB
+(add-hook 'gdb-mode-hook 'gud-tooltip-mode)
+(add-hook 'gdb-mode-hook 'tool-bar-mode)
 
 ;; -------- Begin: makefile-mode --------------------------------------
 (defun my-makefile-mode-hook()
