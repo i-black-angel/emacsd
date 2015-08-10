@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: call functor
+# key: cf
+# --
+${1:void} ${2:CALLBACK }${3:onFunctor}(${4:int param1, int param2}) {
+$0
+}

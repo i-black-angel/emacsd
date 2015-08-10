@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: typedef functor
+# key: tf
+# --
+typedef ${1:void} (${2:WINAPI }${3:*Functor})(${4:int param1, int param2});$0

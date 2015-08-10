@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : undef _MSC_VER
+#key: novc
+# --
+#ifndef _MSC_VER
+# define WINAPI
+# define CALLBACK
+#endif
+$0

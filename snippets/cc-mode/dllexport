@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: dllexport
+# key: dllexport
+# --
+#ifdef _WIN32
+# ifndef ${1:DLLEXPORT}
+#  define $1  __declspec(dllexport)
+# endif
+#else
+# ifndef $1
+#  define $1
+# endif
+#endif
+$0

@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name : #include <windows>
+# key: externc
+# --
+#ifndef EXTERN_C_BEGIN
+# define EXTERN_C_BEGIN extern "C" {
+#endif
+#ifndef EXTERN_C_END
+# define EXTERN_C_END }
+#endif
+#ifdef __cplusplus
+EXTERN_C_BEGIN
+#endif
+
+$0
+
+#ifdef __cplusplus
+EXTERN_C_END
+#endif

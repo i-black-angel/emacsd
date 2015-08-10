@@ -3,4 +3,4 @@
 # key: win
 # group: win32
 # --
-#include <windows.h>
+#include <windows.h>$0

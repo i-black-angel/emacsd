@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: member def
+# key: m
+# --
+$1 $2() const {
+    return this->_$2;
+}
+void set_$2($1 $2) {
+    _$2 = $2;
+}
+${1:int} _${2:name};

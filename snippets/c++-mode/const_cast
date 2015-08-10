@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: const_casting
+# key: cast
+# --
+const_cast<${1:Type}>(${2:msg});
