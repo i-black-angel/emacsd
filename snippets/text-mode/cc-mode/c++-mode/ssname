@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ssname
+# --
+ads_name ${1:ssname};
+$0
+ads_ssfree($1);

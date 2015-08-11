@@ -1,0 +1,5 @@
+#name : #ifdef XXX; #endif
+# --
+#ifdef ${1:_DEBUG}
+$0
+#endif /* $1 */

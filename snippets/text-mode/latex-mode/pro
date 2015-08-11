@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 8 2015
+# name: \ProvidesPackage{...}[...]
+# --
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{${1:yourbook}}[${2:2015/02/08}]$0

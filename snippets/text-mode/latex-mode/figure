@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 27 2015
+# name: \begin{figure}
+# group: Figure Environment
+# --
+\begin{figure}[${1:htbp}]
+  \centering
+  $0
+  \caption{${2:caption}}
+  \label{${3:fig:label}}
+\end{figure}

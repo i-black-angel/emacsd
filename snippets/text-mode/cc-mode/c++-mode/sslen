@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: sslen
+# --
+long ${1:length} = 0, ${2:$$(yas/choose-value '(ln, li))} = 0;
+ads_sslength(${3:ssname}, &$1);
+for ($2 = 0; $2 < $1; ++$2)
+{
+  ads_name ${4:ent};
+  ads_ssname($3, $2, $4);
+  $0
+}

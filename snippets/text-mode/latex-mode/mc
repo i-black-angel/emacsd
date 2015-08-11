@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 11 2015
+# name: \multicolumn{}
+# group: Table Environment
+# --
+\multicolumn{${1:columns}}{${2:<lcr>}}{${3:content}}$0

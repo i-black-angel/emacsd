@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 8 2015
+# name: \LoadClass[...]{...}
+# --
+\LoadClass[${1:a4paper}]{${2:article}}$0

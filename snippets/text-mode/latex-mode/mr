@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Mar 4 2015
+# name: \multirow{}
+# group: Table Environment
+# --
+\multirow{${1:rows}}{${2:width}}{${3:content}}$0

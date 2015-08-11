@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 6 2015
+# name: \documentclass{}
+# --
+\documentclass{${1:article}}$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: atitle
+# --
+CMDIFrameWnd *${1:pp} = NULL;
+$1 = acedGetAcadFrame();
+$1->SetWindowText(_T("${2:YourName}"));
+$1->UpdateWindow();

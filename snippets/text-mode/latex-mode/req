@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 8 2015
+# name: \RequirePackage{}
+# --
+\RequirePackage${1:[options]}{${2:package}}$0

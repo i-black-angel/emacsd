@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: char
+# --
+char ${1:str}[_MAX_PATH] = "";

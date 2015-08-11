@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 6 2015
+# name: \section{}
+# group: sectioning
+# --
+\section{${1:sectionname}}$0

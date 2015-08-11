@@ -1,0 +1,24 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 11 2015
+# name: \begin{longtable}
+# group: Table Environment
+# --
+\begin{longtable}{${1:lcr}}
+  \caption{${2:caption}}
+  \label{${3:tab:longtable}} \\\\
+  \toprule
+  ${4:item & content & remark} \\\\
+  \midrule
+  \endfirsthead
+  \midrule
+  $4 \\\\
+  \midrule
+  \endhead
+  \midrule
+  \multicolumn{${5:columns}}{r}{接下一页\dots} \\
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  $0
+\end{longtable}

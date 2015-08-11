@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# updae: Mar 4 2015
+# name: \vline
+# group: Table Environment
+# --
+\vline$0

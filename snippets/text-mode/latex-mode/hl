@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# updae: Feb 10 2015
+# name: \hline
+# group: Table Environment
+# --
+\hline$0

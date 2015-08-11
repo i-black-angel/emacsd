@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 27 2015
+# name: \bibitem
+# group: Bibliography
+# --
+\bibitem${1:[op]}{${2:id}}$0

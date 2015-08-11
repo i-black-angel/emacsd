@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: tchar
+# --
+TCHAR ${1:szText}[_MAX_PATH] = _T("");

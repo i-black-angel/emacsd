@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 10 2015
+# name: \textsl{}
+# group: Fonts
+# --
+\textsl{$1}$0

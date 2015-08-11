@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: static_casting
-# key: cast
-# --
-static_cast<${1:Type}>(${2:msg});

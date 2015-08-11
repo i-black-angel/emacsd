@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# updae: Feb 11 2015
+# name: \toprule
+# group: Table Environment
+# --
+\toprule$0

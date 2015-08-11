@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Shusheng Shao <iblackangel@163.com>
+# update: Feb 10 2015
+# name: \textup{}
+# group: Fonts
+# --
+\textup{$1}$0
