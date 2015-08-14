@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: delete pointer
+# key: delete
+# --
+if (NULL != ${1:pointer}) {
+    delete $1; $1 = NULL;
+}$0

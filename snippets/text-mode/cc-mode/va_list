@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: variable args
+# key: vl
+# --
+va_list ${1:vargs};
+char ${2:buffer}[${3:1024}] = {0};
+va_start($1, ${4:format});
+vsnprintf($2, sizeof($2) - 1, $4, $1);
+va_end($1);
