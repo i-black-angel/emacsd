@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name : implement Thread class
+# key : thcls
+# --
+class ${1:MyThread} : public Thread
+{
+public:
+    ${1:$(yas/substr text "[^: ]*")}($2) { }
+    virtual ~${1:$(yas/substr text "[^: ]*")}() { }
+    virtual void run() {
+        $0
+    }
+};

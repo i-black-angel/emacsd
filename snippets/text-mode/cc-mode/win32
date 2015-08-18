@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name : #ifdef _WIN32
+# key : win32
+# --
+#ifdef _WIN32
+$0
+#endif /* _WIN32 */

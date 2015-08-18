@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name : #ifdef __GNUC__
+# key : gnuc
+# --
+#ifdef __GNUC__
+$0
+#endif /* __GNUC__ */
