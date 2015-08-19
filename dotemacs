@@ -89,6 +89,8 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-u" 'kill-to-front)
 (global-set-key "\M-]" 'universal-argument)
+(global-set-key (kbd "M-<left>") 'previous-buffer)
+(global-set-key (kbd "M-<right>") 'next-buffer)
 ;; (global-set-key "%" 'match-paren)
 
 ;; refer to this site:
