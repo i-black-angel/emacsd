@@ -2,6 +2,6 @@
 # name : #ifdef _WIN32
 # key : win32
 # --
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WIN64)
 $0
 #endif /* _WIN32 */
