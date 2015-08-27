@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name : struct addrinfo hint;
+# key : hint
+# --
+struct addrinfo ${1:hint};
+$1.ai_flags = 0;
+$1.ai_family = 0;
+$1.ai_socktype = SOCK_STREAM;
+$1.ai_protocol = 0;
+$1.ai_addrlen = 0;
+$1.ai_canonname = NULL;
+$1.ai_addr = NULL;
+$1.ai_next = NULL;

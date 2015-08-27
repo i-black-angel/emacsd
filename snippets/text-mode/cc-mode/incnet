@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name : #include <sys/socket.h>...
+# key : incnet
+# --
+#include <stdint.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netdb.h>

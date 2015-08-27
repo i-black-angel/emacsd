@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name : Cleanup win32 socket
+# key : cleanup
+# --
+#if defined(_WIN32) || defined(_WIN64)
+WSACleanup();
+#endif

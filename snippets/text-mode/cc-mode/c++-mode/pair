@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name : pair<type1, type2>
+# key : pair
+# --
+std::pair<${1:int}, ${2:int}>

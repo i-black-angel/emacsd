@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name : initialize win32 socket
+# key : initsock
+# --
+#if defined(_WIN32) || defined(_WIN64)
+WSADATA wsaData;
+int ${1:err} = WSAStartup(WINSOCK_VERSION, &wsaData);
+if (0 != $1) {
+    fprintf(stderr, "WSAStartup failure!\n");
+    ${2:return 1;}
+}
+#endif

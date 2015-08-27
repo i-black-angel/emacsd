@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name : getaddrinfo
+# key : getaddrinfo
+# --
+struct addrinfo *ailist = NULL, *aip = NULL;
+struct addrinfo hint;
+hint.ai_flags = 0;
+hint.ai_family = 0;
+hint.ai_socktype = SOCK_STREAM;
+hint.ai_protocol = 0;
+hint.ai_addrlen = 0;
+hint.ai_canonname = NULL;
+hint.ai_addr = NULL;
+hint.ai_next = NULL;
+
+getaddrinfo(${1:host}, ${2:"servicename"}, &hint, &ailist);
+
+for (aip = ailist; aip != NULL; aip = aip->ai_next) {
+    struct sockaddr_in *addr = (sockaddr_in *)aip->ai_addr;
+    string ${3:ipaddr} = inet_ntoa(addr->sin_addr);
+}

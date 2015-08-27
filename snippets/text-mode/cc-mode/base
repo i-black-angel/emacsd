@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name : basic definition
+# key : base
+# --
+#ifndef __byte_defined
+# define __byte_defined
+typedef unsigned char byte;
+#endif

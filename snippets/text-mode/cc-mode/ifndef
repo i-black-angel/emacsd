@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name : #ifndef
+# key : ifndef
+# --
+#ifndef ${1:_DEBUG}
+$0
+#endif /* $1 */

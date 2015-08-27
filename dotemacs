@@ -210,6 +210,29 @@
   ;; (setq c-progress-interval nil)
 )
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+;; 安装 abbrev
+(mapc
+ (lambda (mode)
+   (define-abbrev-table mode '(
+                               ("inc" "" skeleton-include 1)
+                               )))
+ '(c-mode-abbrev-table c++-mode-abbrev-table))
+
+;; 输入 inc , 可以自动提示输入文件名称,可以自动补全.
+(define-skeleton skeleton-include
+  "generate include<>" ""
+  > "#include <"
+  (completing-read "Include File:"
+                   (mapcar #'(lambda (f) (list f ))
+                           (apply 'append
+                                  (mapcar
+                                   #'(lambda (dir)
+                                       (directory-files dir))
+                                   (list "/usr/include"
+                                         "/usr/local/include"
+                                         "/usr/include/c++/4.8.4")))))
+  ">")
 ;; ======== End: C program strategy ======================================
 
 ;; -------- Begin: 我的C++语言编辑策略 -----------------------------------
@@ -297,9 +320,9 @@
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
-;; w3m-load
-;; (add-to-list 'load-path "~/.emacs.d/plugins/w3m")
-;; (require 'w3m-load)
+;; enable window-numbering-mode
+(require 'window-numbering)
+(window-numbering-mode t)
 
 ;; Start emacs server
 (server-start)
