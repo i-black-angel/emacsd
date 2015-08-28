@@ -191,8 +191,9 @@
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
 
 (defun my-c-mode-common-hook()
+  (setq ff-search-directories
+	'("." "/usr/include" "/usr/local/include" "../include" "../src"))
   (setq tab-width 4 indent-tabs-mode -1)
-  ;; (c-add-style "PERSONAL" my-c-style t)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
   (define-key c-mode-base-map [(f3)] 'ff-get-other-file)
   (define-key c-mode-base-map [(f4)] 'ff-find-other-file)
@@ -323,7 +324,19 @@
 ;; enable window-numbering-mode
 (require 'window-numbering)
 (window-numbering-mode t)
-
+(require 'smex)
+(global-set-key [(meta x)] (lambda ()
+			     (interactive)
+			     (or (boundp 'smex-cache)
+				 (smex-initialize))
+			     (global-set-key [(meta x)] 'smex)
+			     (smex)))
+(global-set-key [(shift meta x)] (lambda ()
+				   (interactive)
+				   (or (boundp 'smex-cache)
+				       (smex-initialize))
+				   (global-set-key [(shift meta x)] 'smex-major-mode-commands)
+				   (smex-major-mode-commands)))
 ;; Start emacs server
 (server-start)
 ;; ======= End: Load Files ===============================================
