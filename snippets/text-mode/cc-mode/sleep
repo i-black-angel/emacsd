@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name : sleep
-# key : sleep
-# --
-#ifdef __linux__
-sleep(${1:sec});
-#elif defined(_WIN32) || defined(_WIN64)
-Sleep($1 * 1000);
-#endif
