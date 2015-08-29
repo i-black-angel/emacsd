@@ -111,6 +111,8 @@
 (global-linum-mode t)
 (tool-bar-mode -1)
 (setq-default make-backup-files nil)  ; No backup file (*.*~)
+(setq auto-save-default nil)	      ; do not auto save
+(setq backup-inhibited t)	      ; backup-inhibited
 (setq-default major-mode 'text-mode)
 ;; display line-num && column-num
 (setq column-number-mode t)
@@ -141,58 +143,36 @@
 
 
 ;; ---------- begin: mode -----------------------------------
-;;;;根据后缀判断所用的mode
-;;;;注意：我在这里把.h .rc关联到了c++-mode
 (add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.rc$" . c++-mode))
-
-;; 将.mak关联到 makefile-mode
-(setq auto-mode-alist
-      (cons '("\\.mak$" . makefile-mode) auto-mode-alist))
-;; 将.bat关联到 shell-script-mode
-(setq auto-mode-alist
-      (cons '("\\.bat$" . shell-script-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.qml$" . css-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.pro$" . makefile-mode))
+(add-to-list 'auto-mode-alist '("\\.mak$" . makefile-mode))
+(add-to-list 'auto-mode-alist '("\\.bat$" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("\\.qml$" . css-mode))
 ;; =========== end: mode ======================================
-
-
-;; -------- Begin: 我的C/C++语言编辑策略 ---------------------------------
-;; (setq tab-stop-list ())
-;; (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80)) 
-;; (defconst my-c-style
-;;   '((c-tab-always-indent        . t)
-;;     (c-comment-only-line-offset . 4)
-;;     (c-hanging-braces-alist     . ((substatement-open after)
-;;                                    (brace-list-open)))
-;;     (c-hanging-colons-alist     . ((member-init-intro before)
-;;                                    (inher-intro)
-;;                                    (case-label after)
-;;                                    (label after)
-;;                                    (access-label after)))
-;;     (c-cleanup-list             . (scope-operator
-;;                                    empty-defun-braces
-;;                                    defun-close-semi))
-;;     (c-offsets-alist            . ((arglist-close . c-lineup-arglist)
-;;                                    (substatement-open . 0)
-;;                                    (case-label        . 4)
-;;                                    (block-open        . 0)
-;;                                    (knr-argdecl-intro . -)))
-;;     (c-echo-syntactic-information-p . t)
-;;     )
-;;   "My C Programming Style")
-
-;; offset customizations not in my-c-style
-;; (setq c-offsets-alist '((member-init-intro . ++)))
 
 (defun my-emacs-lisp-mode-hook()
   (define-key emacs-lisp-mode-map [f7] 'eval-buffer)
   (define-key emacs-lisp-mode-map [(return)] 'newline-and-indent))
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
 
+;; -------- Begin: 我的C/C++语言编辑策略 ---------------------------------
+(setq gdb-many-windows t)
+
+;; using 'g++ -v file.cpp' to find out the search path
 (defun my-c-mode-common-hook()
   (setq ff-search-directories
-	'("." "/usr/include" "/usr/local/include" "../include" "../src"))
+	'("."
+	  "/usr/include"
+	  "/usr/include/x86_64-linux-gnu"
+	  "/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"
+	  "/usr/local/include"
+	  "/usr/lib/gcc/x86_64-linux-gnu/4.8/include"
+	  "/usr/include/c++/4.8/backward"
+	  "/usr/include/x86_64-linux-gnu/c++/4.8"
+	  "/usr/include/c++/4.8"
+	  "../include"
+	  "../src"))
   (setq tab-width 4 indent-tabs-mode -1)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
   (define-key c-mode-base-map [(f3)] 'ff-get-other-file)
@@ -324,6 +304,8 @@
 ;; enable window-numbering-mode
 (require 'window-numbering)
 (window-numbering-mode t)
+
+;; smex
 (require 'smex)
 (global-set-key [(meta x)] (lambda ()
 			     (interactive)
