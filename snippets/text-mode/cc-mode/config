@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name : #ifdef HAVE_CONFIG_H
+# key : config
+# --
+#ifdef HAVE_CONFIG_H
+# include <config.h>
+#else
+# define PACKAGE "info"
+# define PACKAGE_BUGREPORT "iblackangel@163.com"
+# define PACKAGE_NAME "GNU texinfo"
+# define VERSION "5.2"
+#endif  /* HAVE_CONFIG_H */
