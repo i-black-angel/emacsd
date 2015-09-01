@@ -12,6 +12,7 @@ typedef SOCKET socket_t;
 # define	STDOUT_FILENO	1	/* Standard output.  */
 # define	STDERR_FILENO	2	/* Standard error output.  */
 # define     sleep(n)       Sleep((n) * 1000)
+# define     snprintf       _snprintf
 #else  /* non-windows */
 # ifndef __socket_t_defined
 #  define __socket_t_defined
