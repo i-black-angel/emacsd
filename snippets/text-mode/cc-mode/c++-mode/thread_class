@@ -2,7 +2,7 @@
 # name : implement Thread class
 # key : thcls
 # --
-class ${1:MyThread} : public Thread
+class ${1:MyThread} : public base::Thread
 {
 public:
     ${1:$(yas/substr text "[^: ]*")}($2) { }
