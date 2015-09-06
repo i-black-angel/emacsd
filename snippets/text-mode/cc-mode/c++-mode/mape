@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name : map extend
+# key : mape
+# --
+typedef std::map<${1:type}> ${2:value}_map;
+typedef std::pair<$1> $2_pair;
+typedef $2_map::iterator $2_iterator;
+typedef $2_map::const_iterator $2_const_iterator;
+typedef std::pair<$2_iterator, bool> $2_insert_result;

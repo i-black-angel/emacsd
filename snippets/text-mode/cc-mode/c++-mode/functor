@@ -1,0 +1,10 @@
+# -*- mode:snippet -*-
+# name : functor
+# key : functor
+# --
+class ${1:Functor} {
+public:
+    ${2:type} operator()(${3:args}) { 
+        $0
+    }
+};
