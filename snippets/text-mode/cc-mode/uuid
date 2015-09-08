@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name : uuid
+# key : uuid
+# --
+/**
+ * should be include <uuid/uuid.h> and link with -luuid
+ */
+uuid_t ${1:guid};
+char ${2:str}[64] = {0};
+uuid_generate($1);
+uuid_unparse($1, $2);
