@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name : initialize win32 socket
-# key : initsock
+# name : initialize/cleanup win32 socket
+# key : winsock
 # --
 #if defined(_WIN32) || defined(_WIN64)
 WSADATA wsaData;
@@ -9,4 +9,10 @@ if (0 != $1) {
     fprintf(stderr, "WSAStartup failure!\n");
     ${2:return 1;}
 }
+#endif
+
+$0
+
+#if defined(_WIN32) || defined(_WIN64)
+WSACleanup();
 #endif

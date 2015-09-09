@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name : unsigned char
+# key : uc
+# --
+unsigned char

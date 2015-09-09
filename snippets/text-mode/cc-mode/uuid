@@ -2,10 +2,29 @@
 # name : uuid
 # key : uuid
 # --
-/**
- * should be include <uuid/uuid.h> and link with -luuid
- */
-uuid_t ${1:guid};
-char ${2:str}[64] = {0};
-uuid_generate($1);
-uuid_unparse($1, $2);
+char ${1:buf}[64] = {0};
+#if defined(_WIN32) || defined(_WIN64)
+    /**
+     * should be included <objbase.h>
+     */
+GUID ${2:guid};
+if (S_OK == ::CoCreateGuid(&$2)) {
+    _snprintf_s($1, sizeof($1) -1,
+              "%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x",
+              $2.Data1,
+              $2.Data2,
+              $2.Data3,
+              $2.Data4[0], $2.Data4[1],
+              $2.Data4[2], $2.Data4[3],
+              $2.Data4[4], $2.Data4[5],
+              $2.Data4[6], $2.Data4[7]);
+}
+#else
+    /**
+     * should be included <uuid/uuid.h> and link with -luuid
+     */
+uuid_t $2;
+uuid_generate($2);
+uuid_unparse($2, $1);
+#endif
+return std::string($1);

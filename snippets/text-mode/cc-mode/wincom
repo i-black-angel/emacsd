@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name : COM Initialize/Uninitialize
+# key : wincom
+# --
+#if defined(_WIN32) || defined(_WIN64)
+CoInitialize(NULL);
+#endif
+
+$0
+
+#if defined(_WIN32) || defined(_WIN64)
+CoUninitialize();
+#endif
