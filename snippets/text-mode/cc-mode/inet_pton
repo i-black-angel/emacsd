@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : inet_pton
+# key : pton
+# --
+struct in_addr ${1:ipv4addr};
+inet_pton(AF_INET, ${2:cp}, &$1);

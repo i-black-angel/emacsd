@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name : getpeername
+# key : getpeername
+# --
+struct sockaddr_in ${1:clientaddr};
+socklen_t ${2:addrlen} = sizeof($1);
+getpeername(${3:sockfd}, (sockaddr *)&$1, &$2);

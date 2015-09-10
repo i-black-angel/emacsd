@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : inet_ntop
+# key : ntop
+# --
+char ${1:str}[INET_ADDRSTRLEN];
+inet_ntop(AF_INET, &${2:foo.sin_addr}, $1, sizeof($1));
