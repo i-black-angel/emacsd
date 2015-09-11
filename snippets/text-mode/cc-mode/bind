@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name : bind
+# key : bind
+# --
+sockaddr_in ${1:addr};
+$1.sin_family = AF_INET;
+$1.sin_addr.s_addr = htonl(INADDR_ANY);
+$1.sin_port = htons(${2:8800});
+int ${3:res} = bind(${4:sockfd}, ${5:(const sockaddr *)&addr}, ${6:sizeof(addr)});
+if ($3 < 0) {
+    perror("bind error");
+    return 1;
+}

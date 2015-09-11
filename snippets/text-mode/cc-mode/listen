@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name : listen
+# key : listen
+# --
+int ${1:res} = listen(${2:sockfd}, ${3:1024});
+if ($1 < 0) {
+    perror("listen error");
+    return 1;
+}

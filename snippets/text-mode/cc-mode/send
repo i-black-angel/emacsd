@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name : send
+# key : send
+# --
+${1:ssize_t }send(${2:int fd}, ${3:const void *buf}, ${4:size_t bufsize}, ${5:int flags});$0

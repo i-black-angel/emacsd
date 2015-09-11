@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name : accept
+# key : accept
+# --
+socket_t ${1:clientfd};
+struct sockaddr_in ${2:client_addr};
+socklen_t ${3:len} = sizeof($2);
+$1 = accept(${4:sockfd}, (struct sockaddr *)&$2, &$3);
+if ($1 < 0) {
+    perror("accept error");
+    return 1;
+}

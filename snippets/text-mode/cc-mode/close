@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name : close
+# key : close
+# --
+close(${1:fd});$0

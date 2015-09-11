@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name : recv
+# key : recv
+# --
+${1:ssize_t }recv(${2:int fd}, ${3:void *buf}, ${4:size_t n}, ${5:int flags});$0
