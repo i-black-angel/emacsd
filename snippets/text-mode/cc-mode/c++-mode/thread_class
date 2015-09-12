@@ -8,6 +8,7 @@ public:
     ${1:$(yas/substr text "[^: ]*")}($2) { }
     virtual ~${1:$(yas/substr text "[^: ]*")}() { }
     virtual void run() {
+        /* what you need to do, just imagine this function is an new main() */
         $0
     }
 };

@@ -7,6 +7,7 @@ class ${1:Handler} : public base::DataHandler<${2:Type}>
 public:
     ${1:$(yas/substr text "[^: ]*")}($3) { }
     virtual ~${1:$(yas/substr text "[^: ]*")}() { }
+    /* usage: void Put($2 &t) */
     virtual void DataFunc($2 &t) {
         $0
     }

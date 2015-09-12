@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name : inherit SignalHandler
+# key : signalcls
+# --
+class ${1:Handler} : public base::SignalHandler
+{
+public:
+    ${1:$(yas/substr text "[^: ]*")}($2) { }
+    virtual ~${1:$(yas/substr text "[^: ]*")}() { }
+    /* usage: bool handle(); */
+    virtual void quit() {
+        $0
+    }
+};
