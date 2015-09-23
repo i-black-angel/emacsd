@@ -2,16 +2,12 @@
 # name: dllexport
 # key: dllexport
 # --
-#ifdef _WIN32
+#ifdef _MSC_VER
 # include <windows.h>
 # ifdef ${1:DLL_EXPORT}
-#  ifndef ${2:LIB_API}
-#   define $2  __declspec(dllexport)
-#  endif
+#  define ${2:LIB_API}  __declspec(dllexport)
 # else
-#  ifndef $2
-#   define $2  __declspec(dllimport)
-#  endif
+#  define $2  __declspec(dllimport)
 # endif
 #else   /* non-windows */
 # define $2

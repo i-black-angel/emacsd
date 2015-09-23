@@ -2,8 +2,8 @@
 # name : cross platform definition
 # key : cross
 # --
-#if defined(_WIN32) || defined(_WIN64)
+#ifdef _MSC_VER
 ${1:DoYourJob}
-#elif defined(__linux__)
+#else
 ${2:AnotherJob}
 #endif

@@ -2,7 +2,7 @@
 # name : initialize/cleanup win32 socket
 # key : winsock
 # --
-#if defined(_WIN32) || defined(_WIN64)
+#ifdef _MSC_VER
 WSADATA wsaData;
 int ${1:err} = WSAStartup(WINSOCK_VERSION, &wsaData);
 if (0 != $1) {
@@ -13,6 +13,6 @@ if (0 != $1) {
 
 $0
 
-#if defined(_WIN32) || defined(_WIN64)
+#ifdef _MSC_VER
 WSACleanup();
 #endif

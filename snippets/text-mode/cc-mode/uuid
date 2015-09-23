@@ -3,7 +3,7 @@
 # key : uuid
 # --
 char ${1:buf}[64] = {0};
-#if defined(_WIN32) || defined(_WIN64)
+#ifdef _MSC_VER
     /**
      * should be included <objbase.h>
      */

@@ -2,7 +2,7 @@
 # name : cross definition
 # key : crossdef
 # --
-#if defined(_WIN32) || defined(_WIN64)
+#ifdef _MSC_VER
 # ifndef __socket_t_defined
 #  define __socket_t_defined
 typedef SOCKET socket_t;

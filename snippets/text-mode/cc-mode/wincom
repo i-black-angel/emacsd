@@ -2,12 +2,12 @@
 # name : COM Initialize/Uninitialize
 # key : wincom
 # --
-#if defined(_WIN32) || defined(_WIN64)
+#ifdef _MSC_VER
 CoInitialize(NULL);
 #endif
 
 $0
 
-#if defined(_WIN32) || defined(_WIN64)
+#ifdef _MSC_VER
 CoUninitialize();
 #endif
