@@ -3,7 +3,7 @@
 # key : wincom
 # --
 #ifdef _MSC_VER
-CoInitialize(NULL);
+CoInitializeEx(NULL,COINIT_MULTITHREADED);
 #endif
 
 $0
