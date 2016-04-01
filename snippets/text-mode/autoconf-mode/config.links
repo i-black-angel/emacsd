@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CONFIG_LINKS
+# key: config
+# group: Configuration Actions
+# --
+AC_CONFIG_LINKS([${1:link}])

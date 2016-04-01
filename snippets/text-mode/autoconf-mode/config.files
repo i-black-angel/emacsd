@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CONFIG_FILES
+# key: config
+# group: Configuration Actions
+# --
+AC_CONFIG_FILES([${1:Makefile}])

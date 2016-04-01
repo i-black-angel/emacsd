@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CHECK_FILES
+# key: check
+# group: Generic Checks
+# --
+AC_CHECK_FILES([${1:filename}])

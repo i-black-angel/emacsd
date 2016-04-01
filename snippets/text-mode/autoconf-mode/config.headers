@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CONFIG_HEADERS
+# key: config
+# group: Configuration Actions
+# --
+AC_CONFIG_HEADERS([${1:config.h}])

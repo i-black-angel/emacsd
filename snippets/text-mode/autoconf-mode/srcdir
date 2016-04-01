@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: AC_CONFIG_SRCDIR
-# key: src
-# --
-AC_CONFIG_SRCDIR([${1:src/main.cpp}])

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: AC_CONFIG_HEADERS
-# key: headers
-# --
-AC_CONFIG_HEADERS([${1:config.h}])

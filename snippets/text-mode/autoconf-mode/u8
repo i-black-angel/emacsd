@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: AC_TYPE_UINT8_T
-# key: u8
-# --
-AC_TYPE_UINT8_T

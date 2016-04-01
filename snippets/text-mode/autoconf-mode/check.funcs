@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CHECK_FUNCS
+# key: check
+# group: Generic Checks
+# --
+AC_CHECK_FUNCS([${1:memset}])

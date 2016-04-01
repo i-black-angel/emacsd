@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: AC_TYPE_UINT16_T
-# key: u16
-# --
-AC_TYPE_UINT16_T

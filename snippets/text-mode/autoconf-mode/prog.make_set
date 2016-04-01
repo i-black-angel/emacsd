@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_PROG_MAKE_SET
+# key: prog
+# group: Program Checks
+# --
+AC_PROG_MAKE_SET

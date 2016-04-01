@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CONFIG_SRCDIR
+# key: config
+# group: Finding Input
+# --
+AC_CONFIG_SRCDIR([${1:src/main.cpp}])

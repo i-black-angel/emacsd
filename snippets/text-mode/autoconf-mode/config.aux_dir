@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CONFIG_AUX_DIR
+# key: config
+# group: Finding Input
+# --
+AC_CONFIG_AUX_DIR([${1:.}])

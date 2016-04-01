@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CHECK_TYPES
+# key: check
+# group: Generic Checks
+# --
+AC_CHECK_TYPES([${1:ptrdiff_t}])

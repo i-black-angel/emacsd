@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_FUNC_STRFTIME
+# key: func
+# group: Function Checks
+# --
+AC_FUNC_STRFTIME

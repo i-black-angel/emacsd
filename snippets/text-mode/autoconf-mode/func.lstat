@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_FUNC_LSTAT
+# key: func
+# group: Function Checks
+# --
+AC_FUNC_LSTAT

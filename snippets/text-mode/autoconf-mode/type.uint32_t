@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_TYPE_UINT32_T
+# key: type
+# group: Type Checks
+# --
+AC_TYPE_UINT32_T

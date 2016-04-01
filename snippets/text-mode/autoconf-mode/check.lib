@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CHECK_LIB
+# key: check
+# group: Generic Checks
+# --
+AC_CHECK_LIB(${1:pthread}, ${2:pthread_create})

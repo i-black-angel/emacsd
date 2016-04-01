@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: AC_CHECK_FUNCS
-# key: funcs
-# --
-AC_CHECK_FUNCS([${1:memset}])

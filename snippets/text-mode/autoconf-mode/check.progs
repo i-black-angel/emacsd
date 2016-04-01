@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CHECK_PROGS
+# key: check
+# group: Generic Checks
+# --
+AC_CHECK_PROGS([${1:variable}], [${2:progs-to-check-for}])

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: AC_TYPE_SIZE_T
-# key: size_t
-# --
-AC_TYPE_SIZE_T

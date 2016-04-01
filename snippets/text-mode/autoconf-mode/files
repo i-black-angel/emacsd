@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: AC_CONFIG_FILES
-# key: files
-# --
-AC_CONFIG_FILES([${1:Makefile}])

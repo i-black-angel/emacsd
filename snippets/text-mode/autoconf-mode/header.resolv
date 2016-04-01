@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_HEADER_RESOLV
+# key: header
+# group: Header Checks
+# --
+AC_HEADER_RESOLV
