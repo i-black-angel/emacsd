@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_INIT_AUTOMAKE
+# key: automake
+# --
+AC_INIT_AUTOMAKE([${1:-Wall -Werror foreign subdir-objects}])

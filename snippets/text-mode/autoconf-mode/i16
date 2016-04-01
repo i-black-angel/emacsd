@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_TYPE_INT16_T
+# key: i16
+# --
+AC_TYPE_INT16_T

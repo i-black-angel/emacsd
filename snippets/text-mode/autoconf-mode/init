@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_INIT
+# key: init
+# --
+AC_INIT([${1:hello}], [${2:1.0}], [${3:iblackangel@163.com}])

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_OUTPUT
+# key: output
+# --
+AC_OUTPUT

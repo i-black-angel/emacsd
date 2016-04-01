@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_TYPE_INT32_T
+# key: i32
+# --
+AC_TYPE_INT32_T

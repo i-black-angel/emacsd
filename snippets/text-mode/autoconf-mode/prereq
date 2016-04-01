@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_PREREQ
+# key: pre
+# --
+AC_PREREQ([${1:2.69}])

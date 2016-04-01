@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_TYPE_UINT64_T
+# key: u64
+# --
+AC_TYPE_UINT64_T

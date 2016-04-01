@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_TYPE_INT8_T
+# key: i8
+# --
+AC_TYPE_INT8_T

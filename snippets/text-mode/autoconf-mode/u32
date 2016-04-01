@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_TYPE_UINT32_T
+# key: u32
+# --
+AC_TYPE_UINT32_T
