@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_MSG_WARN
+# key: msg
+# group: Printing Messages
+AC_MSG_WARN([${1:problem-description}])

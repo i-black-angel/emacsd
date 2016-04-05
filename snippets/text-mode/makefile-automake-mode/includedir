@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: includedir
+# key: dir
+# group: Installation Directory
+# --
+\$(includedir)

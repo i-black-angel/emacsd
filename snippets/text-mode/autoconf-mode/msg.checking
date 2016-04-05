@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_MSG_CHECKING
+# key: msg
+# group: Printing Messages
+AC_MSG_CHECKING([${1:for c89}])

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AS_HELP_STRING
+# key: help
+# --
+AS_HELP_STRING([${1:--with-foo=FOO}], [${2:use foo (default is no)}])

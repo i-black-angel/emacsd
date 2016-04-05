@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_STRUCT_ST_BLOCKS
+# key: struct
+# group: Structure Checks
+# --
+AC_STRUCT_ST_BLOCKS

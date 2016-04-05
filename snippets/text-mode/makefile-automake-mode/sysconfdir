@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: sysconfdir
+# key: dir
+# group: Installation Directory
+# --
+\$(sysconfdir)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: libexecdir
+# key: dir
+# group: Installation Directory
+# --
+\$(libexecdir)

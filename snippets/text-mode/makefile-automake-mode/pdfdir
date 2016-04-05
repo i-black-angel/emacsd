@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pdfdir
+# key: dir
+# group: Installation Directory
+# --
+\$(pdfdir)

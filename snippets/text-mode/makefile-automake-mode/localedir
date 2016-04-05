@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: localedir
+# key: dir
+# group: Installation Directory
+# --
+\$(localedir)

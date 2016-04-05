@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: htmldir
+# key: dir
+# group: Installation Directory
+# --
+\$(htmldir)

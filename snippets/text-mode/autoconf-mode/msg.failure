@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_MSG_FAILURE
+# key: msg
+# group: Printing Messages
+AC_MSG_FAILURE([${1:error-description}], [${2:exit-status}])

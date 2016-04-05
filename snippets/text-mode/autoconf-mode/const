@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_C_CONST
+# key: const
+# --
+AC_C_CONST

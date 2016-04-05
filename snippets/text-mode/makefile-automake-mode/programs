@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: bin_PROGRAMS
+# key: programs
+# --
+${1:bin}_PROGRAMS = $0

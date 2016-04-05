@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: psdir
+# key: dir
+# group: Installation Directory
+# --
+\$(psdir)

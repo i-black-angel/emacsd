@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_MSG_ERROR
+# key: msg
+# group: Printing Messages
+AC_MSG_ERROR([${1:--enable-arm-neon: invalid value, error-description}])

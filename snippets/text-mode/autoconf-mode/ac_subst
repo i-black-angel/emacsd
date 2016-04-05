@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_SUBST
+# key: subst
+# --
+AC_SUBST(${1:variable})

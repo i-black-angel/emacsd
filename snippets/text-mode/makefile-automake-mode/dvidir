@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dvidir
+# key: dir
+# group: Installation Directory
+# --
+\$(dvidir)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: top_srcdir
+# key: dir
+# group: Preset Output Variable
+# --
+\$(top_srcdir)

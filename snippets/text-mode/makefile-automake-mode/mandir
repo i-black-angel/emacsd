@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: mandir
+# key: dir
+# group: Installation Directory
+# --
+\$(mandir)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: runstatedir
+# key: dir
+# group: Installation Directory
+# --
+\$(runstatedir)

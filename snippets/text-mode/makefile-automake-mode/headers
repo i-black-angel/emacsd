@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: include_HEADERS
+# key: headers
+# --
+${1:include}_HEADERS = $0

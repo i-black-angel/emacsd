@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_ARG_VAR
+# key: arg
+# --
+AC_ARG_VAR([${1:variable}], [${2:description}])

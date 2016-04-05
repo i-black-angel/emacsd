@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: bindir
+# key: dir
+# group: Installation Directory
+# --
+\$(bindir)

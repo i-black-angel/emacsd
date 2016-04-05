@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: lispdir
+# key: dir
+# group: Installation Directory
+# --
+\$(lispdir)

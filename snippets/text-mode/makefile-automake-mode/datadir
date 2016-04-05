@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: datadir
+# key: dir
+# group: Installation Directory
+# --
+\$(datadir)

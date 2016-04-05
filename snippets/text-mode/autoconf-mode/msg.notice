@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_MSG_NOTICE
+# key: msg
+# group: Printing Messages
+AC_MSG_NOTICE([${1:message}])

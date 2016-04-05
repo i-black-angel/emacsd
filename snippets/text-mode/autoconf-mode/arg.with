@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_ARG_WITH
+# key: arg
+# --
+AC_ARG_WITH([${1:package}], [${2:help-string}], ${3:[action-if-given]}, ${4:[action-if-not-given]})

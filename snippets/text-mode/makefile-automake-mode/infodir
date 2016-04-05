@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: infodir
+# key: dir
+# group: Installation Directory
+# --
+\$(infodir)

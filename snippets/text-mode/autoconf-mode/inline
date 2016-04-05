@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_C_INLINE
+# key: inline
+# --
+AC_C_INLINE

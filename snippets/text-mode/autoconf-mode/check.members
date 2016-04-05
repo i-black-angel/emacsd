@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_CHECK_MEMBERS
+# key: check
+# group: Generic Checks
+# --
+AC_CHECK_MEMBERS(${1:[struct stat.st_rdev, struct stat.st_blksize]})

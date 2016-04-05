@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_C_VOLATILE
+# key: volatile
+# --
+AC_C_VOLATILE

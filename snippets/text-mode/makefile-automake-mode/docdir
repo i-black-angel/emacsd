@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: docdir
+# key: dir
+# group: Installation Directory
+# --
+\$(docdir)

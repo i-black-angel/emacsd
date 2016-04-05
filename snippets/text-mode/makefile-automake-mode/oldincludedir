@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: oldincludedir
+# key: dir
+# group: Installation Directory
+# --
+\$(oldincludedir)

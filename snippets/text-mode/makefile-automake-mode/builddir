@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: builddir
+# key: dir
+# group: Preset Output Variable
+# --
+\$(builddir)

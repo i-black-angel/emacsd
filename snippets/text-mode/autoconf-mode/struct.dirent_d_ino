@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: AC_STRUCT_DIRENT_D_INO
+# key: struct
+# group: Structure Checks
+# --
+AC_STRUCT_DIRENT_D_INO

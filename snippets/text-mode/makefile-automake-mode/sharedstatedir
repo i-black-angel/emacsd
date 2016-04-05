@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: sharedstatedir
+# key: dir
+# group: Installation Directory
+# --
+\$(sharedstatedir)

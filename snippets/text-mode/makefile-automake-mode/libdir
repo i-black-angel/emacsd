@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: libdir
+# key: dir
+# group: Installation Directory
+# --
+\$(libdir)

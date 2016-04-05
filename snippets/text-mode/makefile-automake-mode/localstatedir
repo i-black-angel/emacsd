@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: localstatedir
+# key: dir
+# group: Installation Directory
+# --
+\$(localstatedir)

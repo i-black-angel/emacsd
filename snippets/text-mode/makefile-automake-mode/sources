@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: hello_SOURCES
+# key: sources
+# --
+${1:hello}_SOURCES = $0
