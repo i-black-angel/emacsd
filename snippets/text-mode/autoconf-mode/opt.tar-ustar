@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: tar-ustar
+# key: opt
+# group: Automake Options
+# --
+tar-ustar

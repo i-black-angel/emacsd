@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: tar-pax
+# key: opt
+# group: Automake Options
+# --
+tar-pax

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: -Wall
+# key: opt
+# group: Automake Options
+# --
+-Wall

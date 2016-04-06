@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: subdir-objects
+# key: opt
+# group: Automake Options
+# --
+subdir-objects

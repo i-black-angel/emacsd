@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: std-options
+# key: opt
+# group: Automake Options
+# --
+std-options

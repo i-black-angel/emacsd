@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: -Werror
+# key: opt
+# group: Automake Options
+# --
+-Werror
