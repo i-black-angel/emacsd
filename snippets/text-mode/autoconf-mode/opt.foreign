@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: foreign
+# key: opt
+# group: Automake Options
+# --
+foreign

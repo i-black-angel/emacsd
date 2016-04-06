@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: no-define
+# key: opt
+# group: Automake Options
+# --
+no-define

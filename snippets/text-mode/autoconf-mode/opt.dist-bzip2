@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dist-bzip2
+# key: opt
+# group: Automake Options
+# --
+dist-bzip2

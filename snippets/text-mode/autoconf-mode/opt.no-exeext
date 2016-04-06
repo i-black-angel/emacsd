@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: no-exeext
+# key: opt
+# group: Automake Options
+# --
+no-exeext

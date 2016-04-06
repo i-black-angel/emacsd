@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: parallel-tests
+# key: opt
+# group: Automake Options
+# --
+parallel-tests

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dist-zip
+# key: opt
+# group: Automake Options
+# --
+dist-zip

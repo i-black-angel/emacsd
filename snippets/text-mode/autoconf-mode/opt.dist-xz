@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dist-xz
+# key: opt
+# group: Automake Options
+# --
+dist-xz

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dist-tarZ
+# key: opt
+# group: Automake Options
+# --
+dist-tarZ

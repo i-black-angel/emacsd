@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: no-dist-gzip
+# key: opt
+# group: Automake Options
+# --
+no-dist-gzip

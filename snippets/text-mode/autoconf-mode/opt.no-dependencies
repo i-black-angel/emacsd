@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: no-dependencies
+# key: opt
+# group: Automake Options
+# --
+no-dependencies

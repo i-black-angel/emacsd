@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: nostdinc
+# key: opt
+# group: Automake Options
+# --
+nostdinc

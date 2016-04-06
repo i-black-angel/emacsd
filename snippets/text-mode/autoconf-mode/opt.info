@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: info-in-builddir
+# key: opt
+# group: Automake Options
+# --
+info-in-builddir

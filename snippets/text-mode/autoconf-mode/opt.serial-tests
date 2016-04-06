@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: serial-tests
+# key: opt
+# group: Automake Options
+# --
+serial-tests

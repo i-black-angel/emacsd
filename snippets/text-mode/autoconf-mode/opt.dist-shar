@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dist-shar
+# key: opt
+# group: Automake Options
+# --
+dist-shar

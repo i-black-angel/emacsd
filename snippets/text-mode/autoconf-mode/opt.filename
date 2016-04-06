@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: filename-length-max=99
+# key: opt
+# group: Automake Options
+# --
+filename-length-max=99

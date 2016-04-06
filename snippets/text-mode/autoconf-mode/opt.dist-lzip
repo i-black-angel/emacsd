@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dist-lzip
+# key: opt
+# group: Automake Options
+# --
+dist-lzip

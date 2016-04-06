@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: no-installinfo
+# key: opt
+# group: Automake Options
+# --
+no-installinfo

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: check-news
+# key: opt
+# group: Automake Options
+# --
+check-news

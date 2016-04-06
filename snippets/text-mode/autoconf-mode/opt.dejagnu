@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dejagnu
+# key: opt
+# group: Automake Options
+# --
+dejagnu
