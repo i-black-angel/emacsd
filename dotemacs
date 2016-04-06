@@ -111,7 +111,7 @@
 (global-linum-mode t)
 (tool-bar-mode -1)
 (setq-default make-backup-files nil)  ; No backup file (*.*~)
-(setq auto-save-default nil)	      ; do not auto save
+(setq auto-save-default nil)          ; do not auto save
 (setq backup-inhibited t)	      ; backup-inhibited
 (setq-default major-mode 'text-mode)
 ;; display line-num && column-num
@@ -172,8 +172,11 @@
 	  "/usr/include/x86_64-linux-gnu/c++/4.8"
 	  "/usr/include/c++/4.8"
 	  "../include"
-	  "../src"))
+	  "../src"
+	  "../source"))
   (setq tab-width 4 indent-tabs-mode -1)
+  (c-set-style "stroustrup")
+
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
   (define-key c-mode-base-map [(f3)] 'ff-get-other-file)
   (define-key c-mode-base-map [(f4)] 'ff-find-other-file)
@@ -182,8 +185,9 @@
   (define-key c-mode-base-map [(f7)] 'compile)
   (define-key c-mode-base-map [(f8)] 'gud-finish)
   (define-key c-mode-base-map [(f9)] 'gud-break)
-  (define-key c-mode-base-map [(f10)] 'gud-step)
-  (define-key c-mode-base-map [(f11)] 'gud-next)
+  ;; (define-key c-mode-base-map [(f10)] 'gud-step)
+  (define-key c-mode-base-map [(f11)] 'gud-step)
+  ;; (define-key c-mode-base-map [(f11)] 'gud-next)
   (define-key c-mode-base-map [(f12)] 'gdb-restore-windows)
   (define-key c-mode-base-map [(meta \`)] 'c-indent-command)
   ;;预处理设置
@@ -191,6 +195,10 @@
   ;; (setq c-progress-interval nil)
 )
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+(add-hook 'c-mode-common-hook (lambda ()
+				(when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+				  (ggtags-mode 1))))
 
 ;; 安装 abbrev
 (mapc
@@ -244,6 +252,7 @@
 	     "~/.emacs.d/plugins/yasnippet-0.6.1c")
 (require 'yasnippet)
 (setq yas/root-directory "~/.emacs.d/snippets")
+(setq yas/use-menu 'abbreviate)
 (yas/load-directory yas/root-directory)
 (yas/global-mode 1)
 
@@ -256,6 +265,7 @@
       (doxymacs-font-lock)))
 (add-hook 'font-lock-mode-hook 'my-doxymacs-font-lock-hook)
 
+(require 'col-highlight)
 ;; xcscope.el
 ;; This is a cscope interface for (X)Emacs
 ;; It currently runs under Unix-like os only
@@ -319,6 +329,13 @@
 				       (smex-initialize))
 				   (global-set-key [(shift meta x)] 'smex-major-mode-commands)
 				   (smex-major-mode-commands)))
+
+(require 'sr-speedbar)
+(global-set-key (kbd "s-b") 'sr-speedbar-toggle)
+(defun local-speedbar-mode-hook()
+  (define-key speedbar-mode-map (kbd "u") 'speedbar-up-directory))
+(add-hook 'speedbar-mode-hook 'local-speedbar-mode-hook)
+
 ;; Start emacs server
 (server-start)
 ;; ======= End: Load Files ===============================================
