@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dist_doc_DATA
+# key: data
+# --
+${1:dist_doc}_DATA = $0

@@ -1,5 +1,6 @@
+# -*- mode: snippet -*-
 #contributor : Jimmy Wu <frozenthrone88@gmail.com>
 #name : <td>...</td>
 #group : table
 # --
-<td$1>$2</td>
+<td${1: style="padding-left: 0.5em;padding-right: 0.5em;"}>$2</td>

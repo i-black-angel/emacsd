@@ -1,5 +1,6 @@
+# -*- mode: snippet -*-
 #contributor : Jimmy Wu <frozenthrone88@gmail.com>
 #name : <tr>...</tr>
 #group : table
 # --
-<tr>$0</tr>
+<tr${1: style="height: 30px;"}>$0</tr>
