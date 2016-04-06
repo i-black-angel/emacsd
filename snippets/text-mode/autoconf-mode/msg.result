@@ -2,4 +2,5 @@
 # name: AC_MSG_RESULT
 # key: msg
 # group: Printing Messages
+# --
 AC_MSG_RESULT([${1:yes}])
