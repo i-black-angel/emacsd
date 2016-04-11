@@ -147,6 +147,7 @@
 (add-to-list 'auto-mode-alist '("\\.rc$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.pro$" . makefile-mode))
 (add-to-list 'auto-mode-alist '("\\.mak$" . makefile-mode))
+(add-to-list 'auto-mode-alist '("\\.m4$" . autoconf-mode))
 (add-to-list 'auto-mode-alist '("\\.bat$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.qml$" . css-mode))
 ;; =========== end: mode ======================================
@@ -332,6 +333,8 @@
 
 (require 'sr-speedbar)
 (global-set-key (kbd "s-b") 'sr-speedbar-toggle)
+(setq speedbar-show-unknown-files t)
+
 (defun local-speedbar-mode-hook()
   (define-key speedbar-mode-map (kbd "u") 'speedbar-up-directory))
 (add-hook 'speedbar-mode-hook 'local-speedbar-mode-hook)
