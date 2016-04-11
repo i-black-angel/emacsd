@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: PKG_CHECK_MODULES
+# key: check
+# group: Generic Checks
+# --
+PKG_CHECK_MODULES([${1:HELLO}], [${2:libhello}])

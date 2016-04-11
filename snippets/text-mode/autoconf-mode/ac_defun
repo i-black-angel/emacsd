@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_DEFUN
+# key: defun
+# --
+AC_DEFUN(${1:name}, ${2:body})

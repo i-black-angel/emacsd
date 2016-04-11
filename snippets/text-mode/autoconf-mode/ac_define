@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: AC_DEFINE
+# key: define
+# --
+AC_DEFINE($1)$0
