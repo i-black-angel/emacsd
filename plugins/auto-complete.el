@@ -198,7 +198,7 @@ Use `version-to-list' to get version component.")
 
 (defcustom ac-modes
   '(emacs-lisp-mode lisp-mode lisp-interaction-mode
-    slime-repl-mode
+    slime-repl-mode org-mode
     c-mode cc-mode c++-mode go-mode
     java-mode malabar-mode clojure-mode clojurescript-mode  scala-mode
     scheme-mode
