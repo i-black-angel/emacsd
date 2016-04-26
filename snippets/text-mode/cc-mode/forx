@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: loop printf 0x
-# key: forx
+# name: for (...; ...; ...) { printf }
+# key: for
 # --
 for (int m = 0; m < ${1:len}; ++m) {
     printf ("%02X ", ${4:data}[m]);
