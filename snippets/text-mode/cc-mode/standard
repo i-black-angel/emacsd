@@ -2,18 +2,21 @@
 # name : command line standard
 # key : standard
 # --
+#include <stdarg.h>
+#include <getopt.h>
+
 /* TODO:: modify yourself here */
-static char *g_name = NULL;
-static int g_verbose = 0;
+static char  *g_name     = NULL;
+static int    g_verbose  = 0;
 
 /* option specification for getopt_long. */
 static const struct option long_options[] = {
-    {"help", no_argument, NULL, 'h'},
-    {"version", no_argument, NULL, 'V'},
-    {"verbose", no_argument, NULL, 'v'},
-    {"name", required_argument, NULL, 'n'},
+    {"help",       no_argument,        NULL, 'h'},
+    {"version",    no_argument,        NULL, 'V'},
+    {"verbose",    no_argument,        NULL, 'v'},
+    {"name",       required_argument,  NULL, 'n'},
     /* terminating NULL placeholder */
-    {NULL, no_argument, NULL, 0},
+    {NULL,         no_argument,        NULL, 0},
 };
 
 static void
