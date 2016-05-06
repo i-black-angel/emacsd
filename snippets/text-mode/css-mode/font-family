@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor : rejeep <johan.rejeep@gmail.com>
+# name : font-family: ...
+# key: font
+# --
+font-family: $1;

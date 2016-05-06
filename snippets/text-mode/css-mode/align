@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: text-align: ...
+# key: align
+# --
+text-align: ${1:center};

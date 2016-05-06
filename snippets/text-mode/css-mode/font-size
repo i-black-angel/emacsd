@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor : rejeep <johan.rejeep@gmail.com>
+# name : font-size: ...
+# key: font
+# --
+font-size: ${1:12px};

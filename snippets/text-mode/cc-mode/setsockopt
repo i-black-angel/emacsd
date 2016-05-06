@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: setsockopt
+# key: setsockopt
+# --
+int ${1:opt} = 1;
+setsockopt(${2:sockfd}, ${3:SOL_SOCKET}, ${4:SO_REUSEADDR}, (char *)&$1, sizeof($1));
