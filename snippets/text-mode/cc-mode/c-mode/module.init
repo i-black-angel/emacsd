@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: module_init(...)
+# key: module
+# group: Module Operation
+# --
+module_init($1);

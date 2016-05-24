@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name : KERN_NOTICE
+# key : kern
+# group : Kernel loglevel 
+# contributor : Shusheng Shao <iblackangel@163.com>
+# --
+KERN_NOTICE

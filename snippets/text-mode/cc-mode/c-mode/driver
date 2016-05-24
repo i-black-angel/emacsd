@@ -1,0 +1,48 @@
+# -*- mode: snippet -*-
+# name: Linux Module Driver
+# key: driver
+# --
+#include <linux/kernel.h>
+#include <linux/module.h>
+#include <linux/init.h>
+#include <linux/platform_device.h>
+
+static int ${1:gpio_led}_probe(struct platform_device *dev)
+{
+    /*  TODO:: */
+    $0
+    return 0;
+}
+
+static int $1_remove(struct platform_device *dev)
+{
+    /*  TODO:: */
+    return 0;
+}
+
+static struct platform_driver $1_driver = {
+    .probe     = $1_probe,
+    .remove    = $1_remove,
+    .driver    = {
+        .name    = "$1",
+        .owner   = THIS_MODULE,
+    },
+};
+
+static int __init $1_init(void)
+{
+    return platform_driver_register(&$1_driver);
+}
+
+static void __exit $1_exit(void)
+{
+    platform_driver_unregister(&$1_driver);
+}
+
+module_init($1_init);
+module_exit($1_exit);
+
+MODULE_AUTHOR(${2:"Shusheng Shao"});
+MODULE_DESCRIPTION(${3:"Createw GPIO LED driver"});
+MODULE_LICENSE(${4:"GPL"});
+MODULE_ALIAS(${5:"platform:leds-gpio"});

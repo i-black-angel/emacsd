@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: module_exit(...)
+# key: module
+# group: Module Operation
+# --
+module_exit($1);

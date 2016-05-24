@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: MODULE_ALIAS(...)
+# key: module
+# group: Module Operation
+# --
+MODULE_ALIAS($1);

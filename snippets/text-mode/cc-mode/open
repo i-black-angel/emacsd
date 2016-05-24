@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: open(...)
+# key: open
+# --
+open(${1:const char *pathname}, ${$$(yas/choose-value '("O_RDONLY" "O_WRONLY" "O_RDWR"))});

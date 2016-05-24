@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: MODULE_DESCRIPTION(...)
+# key: module
+# group: Module Operation
+# --
+MODULE_DESCRIPTION(${1:"xxx driver"});
