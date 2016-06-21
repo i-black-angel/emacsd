@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : width
+# key : width
+# contributor : Shusheng Shao<iblackangel@163.com>
+# --
+width: ${1:800px};

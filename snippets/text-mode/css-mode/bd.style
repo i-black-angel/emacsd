@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: border-style
+# group: border
+# --
+border-style: ${$$(yas/choose-value '("none" "hidden" "dotted" "dashed" "solid" "double" "groove" "ridge" "inset" "outset"))};

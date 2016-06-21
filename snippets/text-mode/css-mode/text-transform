@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : text-transform: ...
+# key : text
+# group: text
+# --
+text-transform: ${$$(yas/choose-value '("none" "uppercase" "lowercase" "capitalize"))};

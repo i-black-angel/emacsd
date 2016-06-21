@@ -1,4 +1,5 @@
 #contributor : rejeep <johan.rejeep@gmail.com>
 #name : margin top right bottom left
+# group: margin
 # --
 margin: ${top} ${right} ${bottom} ${left};

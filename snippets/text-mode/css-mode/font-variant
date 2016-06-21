@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: font-weight: ...
+# name: font-variant: ...
 # key: font
 # group: font
 # --
-font-weight: ${1:normal};
+font-variant: ${1:normal};

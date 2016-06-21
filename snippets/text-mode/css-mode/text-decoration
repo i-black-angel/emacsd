@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: text-decoration: ...
+# key: text
+# group: text
+# --
+text-decoration: ${1:underline};

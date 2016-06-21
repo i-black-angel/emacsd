@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: background-attachment: ...
+# key: bg
+# group: background
+# --
+background-attachment: ${1:fixed};

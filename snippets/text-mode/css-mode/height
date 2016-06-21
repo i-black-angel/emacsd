@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : height
+# key : height
+# contributor : Shusheng Shao<iblackangel@163.com>
+# --
+height: ${1:600px};

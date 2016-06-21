@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: border-color: ...
+# group: border
+# --
+border-color: $1;

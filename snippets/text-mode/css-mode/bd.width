@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: border-width: ...
+# group: border
+# --
+border-width: ${1:5px};

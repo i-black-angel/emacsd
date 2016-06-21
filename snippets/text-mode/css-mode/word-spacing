@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : word-spacing
+# key : spacing
+# contributor : Shusheng Shao<iblackangel@163.com>
+# --
+word-spacing: ${1:1px};

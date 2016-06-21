@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: text-indent: ...
+# key: text
+# group: text
+# --
+text-indent: ${1:5em};

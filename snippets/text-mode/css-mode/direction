@@ -1,0 +1,3 @@
+# -*- mode: snippet -*-
+# name: direction: ...
+direction: ${1:rtl};

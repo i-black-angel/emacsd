@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name : letter-spacing
+# key : spacing
+# contributor : Shusheng Shao<iblackangel@163.com>
+# --
+letter-spacing: ${1:1px};

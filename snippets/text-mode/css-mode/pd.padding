@@ -1,4 +1,5 @@
 #contributor : rejeep <johan.rejeep@gmail.com>
 #name : padding: top right bottom left
+#group: padding
 # --
 padding: ${top} ${right} ${bottom} ${left};

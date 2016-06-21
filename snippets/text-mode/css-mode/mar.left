@@ -1,4 +1,5 @@
 #contributor : rejeep <johan.rejeep@gmail.com>
 #name : margin-left: ...
+# group: margin
 # --
 margin-left: $1;

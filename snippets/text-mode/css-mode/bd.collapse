@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: border-collapse: ...
+# group: border
+# --
+border-collapse: ${1:collapse};
