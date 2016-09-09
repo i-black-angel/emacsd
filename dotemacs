@@ -126,6 +126,8 @@
 (setq show-paren-style 'parenthesis)
 (prefer-coding-system 'chinese-gbk)
 (prefer-coding-system 'utf-8)
+(transient-mark-mode t)			;允许临时设置标记
+(setq x-select-enable-clipboard t)	;支持 emacs 和外部程序的粘贴
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (scroll-bar-mode -1)
@@ -341,6 +343,27 @@
 (defun local-speedbar-mode-hook()
   (define-key speedbar-mode-map (kbd "u") 'speedbar-up-directory))
 (add-hook 'speedbar-mode-hook 'local-speedbar-mode-hook)
+
+;; tabbar
+(require 'tabbar)
+(tabbar-mode t)
+(global-set-key (kbd "C-<next>") 'tabbar-forward)
+(global-set-key (kbd "C-<prior>") 'tabbar-backward)
+
+(set-face-attribute 'tabbar-default nil
+		    :family "Bitstream Vera Sans Mono"
+		    :background "#293739"
+		    :foreground "#f8f8f0"
+		    :height 1.0)
+(set-face-attribute 'tabbar-unselected nil
+		    :inherit 'tabbar-default
+                    :box '(:style released-button))
+(set-face-attribute 'tabbar-selected nil
+		    :inherit 'tabbar-default
+		    :foreground "#f8f8f0"
+		    :bold t
+		    :box '(:style pressed-button))
+
 
 ;; Start emacs server
 (server-start)
