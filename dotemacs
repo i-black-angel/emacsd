@@ -91,6 +91,7 @@
 (global-set-key "\M-]" 'universal-argument)
 (global-set-key (kbd "M-<left>") 'previous-buffer)
 (global-set-key (kbd "M-<right>") 'next-buffer)
+(global-set-key (kbd "s-o") 'other-window)
 ;; (global-set-key "%" 'match-paren)
 
 ;; refer to this site:
@@ -120,6 +121,7 @@
 
 ;; Change the title, display buffer's name
 (setq frame-title-format "%f")
+;; (setq-default cursor-type 'bar)		; 光标设置成竖线
 
 ;; Misc
 (show-paren-mode t)
@@ -199,9 +201,6 @@
 )
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
-(add-hook 'c-mode-common-hook (lambda ()
-				(when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-				  (ggtags-mode 1))))
 
 ;; 安装 abbrev
 (mapc
@@ -223,6 +222,11 @@
                                        (directory-files dir))
                                    (list "/usr/include"
                                          "/usr/local/include"
+					 "/usr/include/x86_64-linux-gnu/c++/4.8"
+					 "/usr/include/c++/4.8/backward"
+					 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include"
+					 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"
+					 "/usr/include/x86_64-linux-gnu"
                                          "/usr/include/c++/4.8.4")))))
   ">")
 ;; ======== End: C program strategy ======================================
@@ -364,12 +368,66 @@
 		    :bold t
 		    :box '(:style pressed-button))
 
+;; load ggtags package
+(require 'ggtags)
+(add-hook 'c-mode-common-hook (lambda ()
+				(when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+				  (ggtags-mode 1))))
+
+;; auto-complete-clang
+;; (require 'auto-complete-clang)
+
+;; (setq ac-auto-start nil)
+;; (setq ac-quick-help-delay 0.5)
+;; (ac-set-trigger-key "TAB")
+;; (define-key ac-mode-map  [(meta /)] 'auto-complete)
+;; (define-key ac-mode-map  [(tab)] 'auto-complete)
+
+;; echo "" | g++ -v -x c++ -E -  
+;; (setq ac-clang-flags
+;;       (mapcar (lambda (item)(concat "-I" item))
+;;               (split-string
+;;                "
+;; /usr/include/c++/4.8
+;; /usr/include/x86_64-linux-gnu/c++/4.8
+;; /usr/include/c++/4.8/backward
+;; /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+;; /usr/local/include
+;; /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+;; /usr/include/x86_64-linux-gnu
+;; /usr/include
+;; "
+;;                )))
+
+;; (defun my-ac-config ()
+;;   (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+;;   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+;;   ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+;;   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+;;   (add-hook 'css-mode-hook 'ac-css-mode-setup)
+;;   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+;;   (global-auto-complete-mode t))
+;; (defun my-ac-cc-mode-setup ()
+;;   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+;; (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+;; (my-ac-config)
+
+;; load ace-jump-mode
+(autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+;; load find-file-in-project
+(autoload 'find-file-in-project "find-file-in-project" nil t)
+(autoload 'find-file-in-project-by-selected "find-file-in-project" nil t)
+(autoload 'find-directory-in-project-by-selected "find-file-in-project" nil t)
+(autoload 'ffip-show-diff "find-file-in-project" nil t)
+(autoload 'ffip-save-ivy-last "find-file-in-project" nil t)
+(autoload 'ffip-ivy-resume "find-file-in-project" nil t)
 
 ;; Start emacs server
 (server-start)
 ;; ======= End: Load Files ===============================================
 
- 
 ;; 
 ;; Emacs23 for windows 字体设置
 ;; =======================================================================
