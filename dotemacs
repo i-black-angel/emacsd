@@ -91,7 +91,7 @@
 (global-set-key "\M-]" 'universal-argument)
 (global-set-key (kbd "M-<left>") 'previous-buffer)
 (global-set-key (kbd "M-<right>") 'next-buffer)
-(global-set-key (kbd "s-o") 'other-window)
+(global-set-key (kbd "M-o") 'other-window)
 ;; (global-set-key "%" 'match-paren)
 
 ;; refer to this site:
@@ -122,6 +122,7 @@
 ;; Change the title, display buffer's name
 (setq frame-title-format "%f")
 ;; (setq-default cursor-type 'bar)		; 光标设置成竖线
+(electric-pair-mode t)
 
 ;; Misc
 (show-paren-mode t)
@@ -268,6 +269,7 @@
 
 (require 'color-theme)
 (color-theme-initialize)
+(color-theme-pok-wog)
 (require 'doxymacs)
 (add-hook 'c-mode-common-hook 'doxymacs-mode)
 (defun my-doxymacs-font-lock-hook ()
@@ -340,33 +342,33 @@
 				   (global-set-key [(shift meta x)] 'smex-major-mode-commands)
 				   (smex-major-mode-commands)))
 
-(require 'sr-speedbar)
-(global-set-key (kbd "s-b") 'sr-speedbar-toggle)
-(setq speedbar-show-unknown-files t)
+;; (require 'sr-speedbar)
+;; (global-set-key (kbd "s-b") 'sr-speedbar-toggle)
+;; (setq speedbar-show-unknown-files t)
 
 (defun local-speedbar-mode-hook()
   (define-key speedbar-mode-map (kbd "u") 'speedbar-up-directory))
 (add-hook 'speedbar-mode-hook 'local-speedbar-mode-hook)
 
 ;; tabbar
-(require 'tabbar)
-(tabbar-mode t)
-(global-set-key (kbd "C-<next>") 'tabbar-forward)
-(global-set-key (kbd "C-<prior>") 'tabbar-backward)
+;; (require 'tabbar)
+;; (tabbar-mode t)
+;; (global-set-key (kbd "C-<next>") 'tabbar-forward)
+;; (global-set-key (kbd "C-<prior>") 'tabbar-backward)
 
-(set-face-attribute 'tabbar-default nil
-		    :family "Bitstream Vera Sans Mono"
-		    :background "#293739"
-		    :foreground "#f8f8f0"
-		    :height 1.0)
-(set-face-attribute 'tabbar-unselected nil
-		    :inherit 'tabbar-default
-                    :box '(:style released-button))
-(set-face-attribute 'tabbar-selected nil
-		    :inherit 'tabbar-default
-		    :foreground "#f8f8f0"
-		    :bold t
-		    :box '(:style pressed-button))
+;; (set-face-attribute 'tabbar-default nil
+;; 		    :family "Bitstream Vera Sans Mono"
+;; 		    :background "#293739"
+;; 		    :foreground "#f8f8f0"
+;; 		    :height 1.0)
+;; (set-face-attribute 'tabbar-unselected nil
+;; 		    :inherit 'tabbar-default
+;;                     :box '(:style released-button))
+;; (set-face-attribute 'tabbar-selected nil
+;; 		    :inherit 'tabbar-default
+;; 		    :foreground "#f8f8f0"
+;; 		    :bold t
+;; 		    :box '(:style pressed-button))
 
 ;; load ggtags package
 (require 'ggtags)
