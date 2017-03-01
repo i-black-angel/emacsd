@@ -26,5 +26,5 @@ YOUR PRECIOUS CONFIGURE FILES. :D
 
         'C-0 M-x byte-recompile-directory'
 
-   and type '~/.emacs.d', this command will compile all the .el files in
+   and type `~/.emacs.d`, this command will compile all the `.el` files in
    the directory and in all subdirectories below.
