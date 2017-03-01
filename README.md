@@ -6,7 +6,7 @@ YOUR PRECIOUS CONFIGURE FILES. :D
 
 1. Backup files (optional)
 
-        $ mv ~/.emacs.d ~/.emacs.d-bak       
+        $ mv ~/.emacs.d ~/.emacs.d-bak
         $ mv ~/.emacs ~/.emacs-bak
 
 2. Git clone
