@@ -1,4 +1,4 @@
-;; set user info as your first step
+;; setup user info as the first step
 (setq user-full-name "Shusheng Shao")
 (setq user-mail-address "iblackangel@163.com")
 
@@ -470,3 +470,12 @@
 
 (require 'tramp)
 (setq tramp-default-method "scp")
+
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(autoload 'gfm-mode "markdown-mode"
+   "Major mode for editing GitHub Flavored Markdown files" t)
+(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
