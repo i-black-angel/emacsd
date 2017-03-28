@@ -376,6 +376,11 @@
 				(when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
 				  (ggtags-mode 1))))
 
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
+
 ;; auto-complete-clang
 ;; (require 'auto-complete-clang)
 
