@@ -257,6 +257,9 @@
 
 ;; Using graphviz in emacs
 (load-file "~/.emacs.d/plugins/graphviz-dot-mode.el")
+(defun my-graphviz-dot-mode-hook()
+  (define-key graphviz-dot-mode-map [(tab)] 'graphviz-dot-complete-word))
+(add-hook 'graphviz-dot-mode-hook 'my-graphviz-dot-mode-hook)
 
 ;; Yet Another Snippet (yasnippet)
 (add-to-list 'load-path
@@ -427,7 +430,7 @@
 (autoload 'ffip-ivy-resume "find-file-in-project" nil t)
 
 ;; Start emacs server
-(server-start)
+;; (server-start)
 ;; ======= End: Load Files ===============================================
 
 ;; 
