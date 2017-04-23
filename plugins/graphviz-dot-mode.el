@@ -282,14 +282,43 @@ so changes to this are not immediately visible."
     "promoter" "cds" "terminator" "utr" "primersite" "restrictionsite"
     "fivepoverhang" "threepoverhang" "noverhang" "assembly" "signature"
     "insulator" "ribosite" "rnastab" "proteasesite" "proteinstab"
-    "rpromoter" "rarrow" "larrow" "lpromoter")
+    "rpromoter" "rarrow" "larrow" "lpromoter" "record")
   "*Keywords for shape values. This is used by the auto completion code."
   :type '(repeat (string :tag "Keyword"))
   :group 'graphviz)
 
 (defcustom graphviz-dot-dir-keywords
-  '("TB" "LR" "BT" "RL")
+  '("forward" "back" "both" "none")
   "*Keywords for dir values. This is used by the auto completion code."
+  :type '(repeat (string :tag "Keyword"))
+  :group 'graphviz)
+
+(defcustom graphviz-dot-rankdir-keywords
+  '("TB" "LR" "BT" "RL")
+  "*Keywords for rankdir values. This is used by the auto completion code."
+  :type '(repeat (string :tag "Keyword"))
+  :group 'graphviz)
+
+(defcustom graphviz-dot-pagedir-keywords
+  '("BL" "BR" "TL" "TR" "RB" "RT" "LB" "LT")
+  "*Keywords for pagedir values. This is used by the auto completion code."
+  :type '(repeat (string :tag "Keyword"))
+  :group 'graphviz)
+
+(defcustom graphviz-dot-arrow-keywords
+  '("box" "lbox" "rbox" "obox" "olbox" "orbox"
+    "crow" "lcrow" "rcrow"
+    "curve" "lcurve" "rcurve"
+    "diamond" "ldiamond" "rdiamond"
+    "odiamond" "oldiamond" "ordiamond"
+    "dot" "odot"
+    "icurve" "licurve" "ricurve"
+    "inv" "linv" "rinv" "oinv" "olinv" "orinv"
+    "none"
+    "normal" "lnormal" "rnormal" "onormal" "olnormal" "ornormal"
+    "tee" "ltee" "rtee"
+    "vee" "lvee" "rvee")
+  "*Keywords for arrow shape values. This is used by the auto completion code."
   :type '(repeat (string :tag "Keyword"))
   :group 'graphviz)
 
@@ -443,6 +472,15 @@ The list of constant is available at http://www.research.att.com/~erg/graphviz\
 
 (defvar graphviz-dir-keywords
   (mapcar #'(lambda (elm) (cons elm 0)) graphviz-dot-dir-keywords))
+
+(defvar graphviz-rankdir-keywords
+  (mapcar #'(lambda (elm) (cons elm 0)) graphviz-dot-rankdir-keywords))
+
+(defvar graphviz-pagedir-keywords
+  (mapcar #'(lambda (elm) (cons elm 0)) graphviz-dot-pagedir-keywords))
+
+(defvar graphviz-arrow-keywords
+  (mapcar #'(lambda (elm) (cons elm 0)) graphviz-dot-arrow-keywords))
 
 ;;; Key map
 (defvar graphviz-dot-mode-map ()
@@ -913,9 +951,16 @@ buffer is saved before the command is executed."
 		    'style
 		  (if (looking-at "shape")
 		      'shape
-		    (if (looking-at "[a-zA-Z]*dir")
-			'dir
-		      'value))))))
+		    (if (looking-at "rankdir")
+			'rankdir
+		      (if (looking-at "pagedir")
+			  'pagedir
+			(if (looking-at "dir")
+			    'dir
+			  (if (looking-at "arrow[ht]*")
+			      'arrow
+			    'value))
+			)))))))
            (t 'other)))))))
 
 (defun graphviz-dot-get-keywords ()
@@ -930,6 +975,9 @@ buffer is saved before the command is executed."
      ((equal state 'style)     graphviz-style-keywords)
      ((equal state 'shape)     graphviz-shape-keywords)
      ((equal state 'dir)       graphviz-dir-keywords)
+     ((equal state 'rankdir)   graphviz-rankdir-keywords)
+     ((equal state 'pagedir)   graphviz-pagedir-keywords)
+     ((equal state 'arrow)     graphviz-arrow-keywords)
      ((equal state 'attribute) graphviz-attr-keywords)
      (t                        graphviz-attr-keywords))))
 
