@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: now
+# --
+char ${1:buf}[${2:64}] = { 0x00 };
+time_t ${3:now} = time(NULL);
+struct tm *${4:t} = localtime(&$3);
+
+sprintf(buf, "%04d-%02d-%02d %02d:%02d:%02d",
+$4->tm_year + 1900, $4->tm_mon + 1, $4->tm_mday,
+$4->tm_hour, $4->tm_min, $4->tm_sec);
