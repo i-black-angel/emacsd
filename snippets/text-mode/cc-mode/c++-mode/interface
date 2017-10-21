@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : class ... { ... }
+#key : inf
+# --
+class ${1:InterfaceName}
+{
+public:
+    virtual ~${1:$(yas/substr text "[^: ]*")}() { }
+    $0
+protected:
+    explicit ${1:$(yas/substr text "[^: ]*")}() { }
+};

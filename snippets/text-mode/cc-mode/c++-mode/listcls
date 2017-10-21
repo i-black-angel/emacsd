@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name : inherit HListHandler<T>
+# key : listcls
+# --
+class ${1:Handler} : public Whale::Basic::HListHandler<${2:Type}>
+{
+public:
+    explicit ${1:$(yas/substr text "[^: ]*")}($3) { }
+    virtual ~${1:$(yas/substr text "[^: ]*")}() { }
+
+    /* usage: void push(const $2 &t) */
+protected:
+    virtual void handle(const $2 &t) {
+        $0
+    }
+};

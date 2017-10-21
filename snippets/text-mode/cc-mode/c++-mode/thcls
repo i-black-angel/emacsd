@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name : inherit HThread
+# key : thcls
+# --
+class ${1:Thread} : public Whale::Basic::HThread
+{
+public:
+    explicit ${1:$(yas/substr text "[^: ]*")}($2) { }
+    virtual ~${1:$(yas/substr text "[^: ]*")}() { }
+
+protected:
+    virtual void action() {
+        $0
+    }
+};
