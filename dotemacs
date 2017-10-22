@@ -179,6 +179,7 @@
 	  "/usr/include/c++/4.8"
 	  "../include"
 	  "../src"
+	  "../../src"
 	  "../source"))
   (setq tab-width 4 indent-tabs-mode -1)
   (c-set-style "stroustrup")
